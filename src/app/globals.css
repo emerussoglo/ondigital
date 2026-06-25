@@ -19,7 +19,7 @@
     linear-gradient(to bottom, #f9fafb 1px, transparent 1px);
   background-size: 40px 40px;
   overflow: hidden;
-  padding: 80px 0;
+  padding: 20px 0;
 }
 
 .hero-container {
@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 48px;
+  gap: 30px;
 }
 
 /* BLOC GAUCHE - CONTENU */
@@ -60,9 +60,9 @@
 
 /* TITRES */
 .hero-title {
-  font-size: 56px;
+  font-size: 52px;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.1;
   color: var(--color-text-dark);
   margin-bottom: 24px;
   letter-spacing: -1px;
@@ -75,10 +75,10 @@
 
 /* DESCRIPTION */
 .hero-description {
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.6;
   color: var(--color-text-muted);
-  margin-bottom: 36px;
+  margin-bottom: 20px;
 }
 
 .hero-description strong {
@@ -90,17 +90,38 @@
 .hero-actions {
   display: flex;
   gap: 16px;
-  margin-bottom: 48px;
+  margin-bottom: 10px;
 }
 
+/* REPRISE DU BOUTON HERO AVEC EFFET MIROIR (SHINE) */
 .btn-hero-primary {
+  position: relative; /* Indispensable pour bloquer le reflet à l'intérieur */
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: 14px 28px;
+  padding: 14px 20px;
   border-radius: 12px;
   font-size: 15px;
   font-weight: 600;
+  overflow: hidden; /* Masque le reflet lorsqu'il dépasse des bords */
   transition: background-color var(--transition-fast);
+}
+
+/* Le reflet oblique en mouvement */
+.btn-hero-primary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%; /* Démarre caché sur la gauche */
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%, /* Intensité du reflet blanc */
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg); /* Donne l'effet oblique oblique */
+  animation: shineInfinite 4s ease-in-out infinite; /* Animation cyclique */
 }
 
 .btn-hero-primary:hover {
@@ -111,7 +132,7 @@
   background-color: var(--color-white);
   color: var(--color-text-dark);
   border: 1px solid #e5e7eb;
-  padding: 14px 28px;
+  padding: 14px 20px;
   border-radius: 12px;
   font-size: 15px;
   font-weight: 600;
@@ -126,9 +147,9 @@
 /* STATISTIQUES */
 .hero-stats {
   display: flex;
-  gap: 40px;
+  gap: 20px;
   border-top: 1px solid var(--color-border);
-  padding-top: 32px;
+  padding-top: 20px;
 }
 
 .stat-item {
@@ -149,43 +170,100 @@
   font-weight: 500;
 }
 
-/* BLOC DROITE - BENTO GRID */
+/* BLOC DROITE - BENTO GRID MARQUEE UNIVERSEL */
 .hero-visual-grid {
   flex: 1;
   display: flex;
   gap: 20px;
-  max-height: 600px;
+  height: 540px; /* On fixe une hauteur max stricte */
+  overflow: hidden; /* Coupe tout ce qui dépasse du cadre pour masquer la boucle */
+  position: relative;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
 }
 
 .grid-col {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Le conteneur interne qui va bouger */
+.grid-col-track {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  flex: 1;
+  position: absolute;
+  width: 100%;
 }
 
-/* Décalage vertical de la deuxième colonne propre au style bento */
-.mt-translate {
-  transform: translateY(40px);
+/* ==========================================================================
+   CORRECTIF DU DÉFILEMENT INFINI BENTO (GAUCHE & DROITE SANS SACCADE)
+   ========================================================================== */
+
+/* --- COLONNE GAUCHE : DE HAUT EN BAS (OK) --- */
+.scroll-down .grid-col-track {
+  top: 0;
+  animation: marqueeDown 16s linear infinite;
 }
 
+@keyframes marqueeDown {
+  0% {
+    transform: translateY(-50%); /* Démarre décalé du haut */
+  }
+  100% {
+    transform: translateY(0%); /* Descend et se remet en place */
+  }
+}
+
+/* --- COLONNE DROITE : DE BAS EN HAUT (CORRIGÉ) --- */
+.scroll-up .grid-col-track {
+  top: 0; /* <--- Aligné sur top pour cloner le comportement de gauche */
+  animation: marqueeUp 16s linear infinite;
+}
+
+@keyframes marqueeUp {
+  0% {
+    transform: translateY(0%); /* Démarre à sa position initiale */
+  }
+  100% {
+    transform: translateY(-50%); /* Monte de moitié de manière fluide */
+  }
+}
+
+
+
+.scroll-down .grid-col-track:hover {
+  animation-play-state: paused; /* Met en pause si l'utilisateur met sa souris dessus */
+}
+
+.scroll-up .grid-col-track:hover {
+  animation-play-state: paused;
+}
+
+/* FILTRAGE ET STYLE DES CARTES */
 .grid-card {
   background-color: #f3f4f6;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-  transition: transform var(--transition-fast);
-}
-
-.grid-card:hover {
-  transform: translateY(-4px);
+  width: 100%;
+  flex-shrink: 0; /* Empêche les cartes de se tasser */
 }
 
 .grid-card img {
   width: 100%;
-  height: 100%;
+  height: 180px; /* Fixer une hauteur équilibrée pour l'harmonie du défilé */
   object-fit: cover;
   display: block;
+}
+
+/* Masquer la grille sur mobile pour éviter de surcharger l'écran */
+@media (max-width: 960px) {
+  .hero-visual-grid {
+    display: none;
+  }
 }
 
 /* RESPONSIVE DESIGN (MOBILE & TABLETTE) */
@@ -1129,15 +1207,16 @@
 .project-image-box {
   position: relative;
   width: 100%;
-  height: 340px;
+  height: 480px; /* Augmenté de 340px à 480px pour mieux mettre en valeur les affiches verticales */
   overflow: hidden;
-  background-color: #f3f4f6;
+  background-color: #f8fafc; /* Fond très clair neutre pour habiller les côtés des visuels */
 }
 
 .project-img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* <--- CHANGÉ : L'image s'affiche désormais à 100% sans coupure */
+  padding: 16px; /* Optionnel : ajoute un léger espace respirable autour de l'affiche */
   transition: transform 0.5s ease;
 }
 
@@ -1193,6 +1272,7 @@
   font-weight: 800;
   color: var(--color-text-dark);
 }
+
 
 /* ==========================================================================
    MODALE DE PREMIER PLAN (LIGHTBOX)

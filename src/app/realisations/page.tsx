@@ -50,7 +50,7 @@ export default function RealisationsPage() {
       categoryLabel: "MARKETING",
       image: "/img/hero-video1.jpeg",
       description: "Production d'une vidéo courte et dynamique optimisée pour les campagnes publicitaires Ads."
-    },
+    }, 
     {
       id: 5,
       title: "Logo Crown Studio",
@@ -60,13 +60,29 @@ export default function RealisationsPage() {
       description: "Charte graphique complète, logo et supports de communication pour le Centre Sèwèdo pour le bien-être humain."
     },
     {
-      id: 6,
-      title: "Affiche Événement",
-      category: "graphisme",
-      categoryLabel: "GRAPHISME",
-      image: "/img/hero-video1.jpeg",
-      description: "Conception des affiches officielles et supports de communication visuelle axés sur l'innovation et la jeunesse."
-    }
+  id: 6,
+  title: "Affiche Publicitaire - LM-Nails",
+  category: "graphisme",
+  categoryLabel: "GRAPHISME / PRINT",
+  image: "/img/affiche-lm-nails.jpeg",
+  description: "Création d'un visuel publicitaire pour un salon de manucure et esthétique. Valorisation des services (Nail Art, Extensions) et intégration optimisée des réseaux sociaux pour maximiser la visibilité locale."
+},
+{
+  id: 7,
+  title: "Visuel Promotionnel - Formation Création de Sites IA",
+  category: "graphisme",
+  categoryLabel: "GRAPHISME / MARKETING",
+  image: "/img/affiche-formation-ia.jpeg",
+  description: "Conception d'une affiche de conversion pour une formation en ligne. Graphisme dynamique combinant l'imagerie Tech/IA avec des accroches claires et des badges de confiance pour stimuler les inscriptions."
+},
+{
+  id: 8,
+  title: "Affiche Catalogue - Nice's Collection",
+  category: "graphisme",
+  categoryLabel: "GRAPHISME / BRANDING",
+  image: "/img/affiche-nices-collection.jpeg",
+  description: "Design de support de communication pour une marque de parfums et cosmétiques. Mise en page élégante sous forme de mini-catalogue avec des bulles de produits pour une lecture fluide et attrayante."
+}
   ];
 
   // Logique de filtrage des projets
@@ -95,25 +111,25 @@ export default function RealisationsPage() {
             className={`filter-btn ${activeCategory === 'tous' ? 'active' : ''}`}
             onClick={() => setActiveCategory('tous')}
           >
-            Tous
+            Tous <i className="fa-solid fa-border-all"></i>
           </button>
           <button 
             className={`filter-btn ${activeCategory === 'web' ? 'active' : ''}`}
             onClick={() => setActiveCategory('web')}
           >
-            Sites web
+            Sites web <i className="fa-solid fa-globe"></i>
           </button>
-          <button 
+          <button  
             className={`filter-btn ${activeCategory === 'marketing' ? 'active' : ''}`}
             onClick={() => setActiveCategory('marketing')}
           >
-            Marketing
+            Marketing <i className="fa-solid fa-bullhorn"></i>
           </button>
           <button 
             className={`filter-btn ${activeCategory === 'graphisme' ? 'active' : ''}`}
             onClick={() => setActiveCategory('graphisme')}
           >
-            Graphisme
+            Graphisme <i className="fa-solid fa-palette"></i>
           </button>
         </div>
 

@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 interface SubService {
@@ -101,12 +101,38 @@ export default function ServicesPage() {
     }
   ];
 
+  // Gestion de l'effet d'apparition au défilement (Reveal Effect)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            // Optionnel : observer.unobserve(entry.target) si tu veux que l'effet ne se produise qu'une seule fois
+          }
+        });
+      },
+      {
+        threshold: 0.15, // La section se révèle quand 15% de sa surface est visible
+        rootMargin: "0px 0px -50px 0px" // Déclenche l'effet légèrement avant qu'elle n'atteigne le milieu de l'écran
+      }
+    );
+
+    // Sélectionne toutes les sections ayant la classe .reveal-section
+    const sections = document.querySelectorAll('.reveal-section');
+    sections.forEach((section) => observer.observe(section));
+
+    return () => {
+      sections.forEach((section) => observer.unobserve(section));
+    };
+  }, []);
+
   return (
     <main className="services-page">
       <div className="services-main-container">
         
         {/* EN-TÊTE PRINCIPALE DE LA PAGE */}
-        <div className="services-main-header">
+        <div className="services-main-header reveal-section">
           <div className="section-badge">SERVICES</div>
           <h1 className="services-main-title">
             Tout pour faire <span className="text-italic-blue">rayonner</span> votre marque.
@@ -122,7 +148,7 @@ export default function ServicesPage() {
             <div className="services-cat-block" key={catIndex}>
               
               {/* Entête de la catégorie (Icône + Titre + Sub) */}
-              <div className="cat-header-block">
+              <div className="cat-header-block"> 
                 <div className="cat-icon-badge">
                   <i className={category.mainIconClass}></i>
                 </div>
@@ -131,7 +157,7 @@ export default function ServicesPage() {
               </div>
 
               {/* Grille des sous-services (4 colonnes) */}
-              <div className="sub-services-grid">
+              <div className="sub-services-grid reveal-section">
                 {category.items.map((item, itemIndex) => (
                   <div className="sub-service-card" key={itemIndex}>
                     <div className="sub-card-icon-wrapper">
@@ -150,7 +176,7 @@ export default function ServicesPage() {
         {/* ACTION DE FIN : DEMANDER UN DEVIS */}
         <div className="services-cta-wrapper">
           <Link href="/contact" className="btn-services-cta">
-            Demander un devis gratuit
+            Demander un devis gratuit <i className="fa-regular fa-circle-check"></i>
           </Link>
         </div>
 

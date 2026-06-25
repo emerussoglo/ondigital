@@ -89,9 +89,9 @@ a {
   color: var(--color-primary);
   font-weight: 600;
 }
-
-/* BOUTON CTA DEVIS */
+/* BOUTON CTA DEVIS AVEC EFFET MIROIR BRYANT (SHINE) */
 .btn-cta {
+  position: relative; /* Indispensable pour contenir le reflet */
   display: inline-flex;
   align-items: center;
   gap: 8px;
@@ -101,11 +101,33 @@ a {
   border-radius: 12px;
   font-size: 15px;
   font-weight: 600;
+  overflow: hidden; /* Masque le reflet quand il sort du bouton */
   transition: background-color var(--transition-fast), transform 0.1s ease;
 }
 
 .btn-cta i {
   font-size: 16px;
+  position: relative;
+  z-index: 2; /* Garde l'icône au-dessus du reflet */
+}
+
+/* Le reflet miroir */
+.btn-cta::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%; /* Démarre bien en dehors à gauche */
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%, /* Intensité de la lumière au centre */
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-25deg); /* Incline le reflet de manière oblique */
+  animation: shineInfinite 4s ease-in-out infinite; /* Défilement infini */
+  z-index: 1;
 }
 
 .btn-cta:hover {
@@ -114,6 +136,19 @@ a {
 
 .btn-cta:active {
   transform: scale(0.98);
+}
+
+/* ANIMATION DU MIROIR */
+@keyframes shineInfinite {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: 150%; /* Traverse complètement jusqu'à droite */
+  }
+  100% {
+    left: 150%; /* Crée un temps de pause avant de recommencer */
+  }
 }
 
 /* BOUTON MENUS MOBILE (BURGER) */
@@ -197,17 +232,37 @@ a {
   }
 }
 
+
 /* FOOTER PRINCIPAL */
 .main-footer {
   padding: 60px 0 40px 0;
   background-color: var(--color-white);
   border-top: 1px solid #f3f4f6; /* Une très légère séparation haute */
+  position: relative; /* Indispensable pour caler le gradient tout en bas */
+  overflow: hidden;
+}
+
+/* LE LINEAR GRADIENT TOUT EN BAS */
+.main-footer::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 6px; /* Épaisseur de la bande dégradée */
+  background: linear-gradient(
+    to right, 
+    #0061ff, 
+    #bf0fff, 
+    #ff1b6b, 
+    #ff930f
+  ); /* Reprend la charte dynamique et moderne de tes boutons */
 }
 
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 24px 10px 24px; /* Ajout d'un petit padding-bottom pour ne pas coller à la bande */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -293,7 +348,6 @@ a {
     font-size: 14.5px;
   }
 }
-
 
 
 /* COMPOSANT PAGE CONTACT */
@@ -1065,7 +1119,7 @@ a.info-value:hover {
   overflow: hidden;
   position: relative;
   padding: 20px 0;
-}
+}     
 
 /* Gradient d'estompement sur les côtés gauche/droite pour un effet premium flouté */
 .testimonials-slider-wrapper::before,
@@ -1211,4 +1265,67 @@ a.info-value:hover {
   .testimonials-slider-wrapper::after {
     width: 50px; /* Réduit les zones dégradées pour laisser place aux cartes */
   }
+}
+
+/* ==========================================================================
+   EFFET D'APPARITION AU DÉFILEMENT (REVEAL EFFECT)
+   ========================================================================== */
+
+/* État initial masqué */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), 
+              transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+  will-change: transform, opacity; /* Optimise les performances graphiques du navigateur */
+}
+
+/* État visible dès que la classe active est injectée en JS */
+.reveal-section.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* CONTENEUR PLEIN ÉCRAN POUR LE LOADER */
+.loader-container {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-white, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000; /* Passe au-dessus de tout, même de la lightbox */
+}
+
+/* Ton code CSS du .loader fourni reste identique en dessous */
+.loader {
+  width: 44.8px;
+  height: 44.8px;
+  color: #2563eb; /* Modifié ici pour correspondre au bleu OnDigital si tu veux */
+  position: relative;
+  background: radial-gradient(11.2px,currentColor 94%,#0000);
+}
+
+.loader:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(10.08px at bottom right,#0000 94%,currentColor) top    left,
+          radial-gradient(10.08px at bottom left ,#0000 94%,currentColor) top    right,
+          radial-gradient(10.08px at top    right,#0000 94%,currentColor) bottom left,
+          radial-gradient(10.08px at top    left ,#0000 94%,currentColor) bottom right;
+  background-size: 22.4px 22.4px;
+  background-repeat: no-repeat;
+  animation: loader 1.5s infinite cubic-bezier(0.3,1,0,1);
+}
+
+@keyframes loader {
+  33% { inset: -11.2px; transform: rotate(0deg); }
+  66% { inset: -11.2px; transform: rotate(90deg); }
+  100% { inset: 0; transform: rotate(90deg); }
 }

@@ -19,7 +19,7 @@ export default function TestimonialsSection() {
       name: "Afiwa Agbodjan",
       role: "Fondatrice",
       company: "WaxDesign",
-      image: "/img/testimonials/user1.jpg", // À placer dans public/img/testimonials/
+      image: "/img/testimonials1.jpeg", // À placer dans public/img/testimonials/
       stars: 5,
       comment: "L'équipe a su capter exactement l'essence de notre marque pour notre site e-commerce. Depuis le lancement, nos commandes en ligne ont doublé au Bénin !"
     },
@@ -28,7 +28,7 @@ export default function TestimonialsSection() {
       name: "Koffi Mensah",
       role: "Directeur Général",
       company: "SoneX",
-      image: "/img/testimonials/user2.jpg",
+      image: "/img/testimonials1.jpeg",
       stars: 5,
       comment: "Un professionnalisme rare. Leur accompagnement sur nos campagnes publicitaires Meta Ads a transformé notre visibilité à Cotonou. Je recommande vivement."
     },
@@ -37,7 +37,7 @@ export default function TestimonialsSection() {
       name: "Chantal Dovonou",
       role: "Responsable Communication",
       company: "BioSante",
-      image: "/img/testimonials/user3.jpg",
+      image: "/img/testimonials2.jpeg",
       stars: 5,
       comment: "Le travail sur notre identité graphique et nos supports réseaux sociaux est incroyable. Les retours de nos clients sont unanimes : c'est pro et épuré."
     },
@@ -46,7 +46,7 @@ export default function TestimonialsSection() {
       name: "Marc Alao",
       role: "Promoteur",
       company: "ImmoBénin",
-      image: "/img/testimonials/user4.jpg",
+      image: "/img/testimonials2.jpeg",
       stars: 5,
       comment: "Un site internet rapide, fluide et qui génère des leads dès la première semaine. L'équipe technique maîtrise son sujet sur le bout des doigts."
     }

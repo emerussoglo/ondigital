@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { usePathname } from "next/navigation"; // <--- AJOUT ICI
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname(); // <--- RÉCUPÈRE L'URL ACTUELLE (ex: "/" ou "/services")
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -16,24 +17,16 @@ export default function Navbar() {
       <div className="navbar-container">
         {/* LOGO */}
         <Link href="/" className="navbar-logo">
-          {/* Remplace "/img/logo.png" par le chemin exact de ton logo si nécessaire */}
-          {/* <Image 
-            src="/img/logo.png" 
-            alt="OnDigital" 
-            width={140} 
-            height={35} 
-            priority
-          /> */}
           <img src="/img/logo.png" alt="ondigital" />
         </Link>
 
         {/* MENU DESKTOP */}
         <nav className="nav-desktop">
-          <Link href="/" className="nav-link active">Accueil</Link>
-          <Link href="/services" className="nav-link">Services</Link>
-          <Link href="/realisations" className="nav-link">Réalisations</Link>
-          <Link href="/equipe" className="nav-link">Équipe</Link>
-          <Link href="/contact" className="nav-link">Contact</Link>
+          <Link href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`}>Accueil</Link>
+          <Link href="/services" className={`nav-link ${pathname === "/services" ? "active" : ""}`}>Services</Link>
+          <Link href="/realisations" className={`nav-link ${pathname === "/realisations" ? "active" : ""}`}>Réalisations</Link>
+          <Link href="/equipe" className={`nav-link ${pathname === "/equipe" ? "active" : ""}`}>Équipe</Link>
+          <Link href="/contact" className={`nav-link ${pathname === "/contact" ? "active" : ""}`}>Contact</Link>
         </nav>
 
         {/* CTA DESKTOP */}
@@ -49,15 +42,9 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* RIDEAU / OVERLAY MOBILE (Affiche le menu de ta 2ème capture) */}
+      {/* RIDEAU / OVERLAY MOBILE */}
       <div className={`nav-mobile-overlay ${isOpen ? "open" : ""}`}>
         <div className="nav-mobile-header">
-          {/* <Image 
-            src="/img/logo.png" 
-            alt="OnDigital" 
-            width={140} 
-            height={35} 
-          /> */}
           <img src="/img/logo.png" alt="ondigital" />
           <button className="close-menu" onClick={toggleMenu}>
             <i className="fa-solid fa-xmark"></i>
@@ -65,11 +52,11 @@ export default function Navbar() {
         </div>
 
         <nav className="nav-mobile-links">
-          <Link href="/" className="nav-mobile-link" onClick={toggleMenu}>Accueil</Link>
-          <Link href="/services" className="nav-mobile-link" onClick={toggleMenu}>Services</Link>
-          <Link href="/realisations" className="nav-mobile-link" onClick={toggleMenu}>Réalisations</Link>
-          <Link href="/equipe" className="nav-mobile-link" onClick={toggleMenu}>Équipe</Link>
-          <Link href="/contact" className="nav-mobile-link" onClick={toggleMenu}>Contact</Link>
+          <Link href="/" className={`nav-mobile-link ${pathname === "/" ? "active" : ""}`} onClick={toggleMenu}>Accueil</Link>
+          <Link href="/services" className={`nav-mobile-link ${pathname === "/services" ? "active" : ""}`} onClick={toggleMenu}>Services</Link>
+          <Link href="/realisations" className={`nav-mobile-link ${pathname === "/realisations" ? "active" : ""}`} onClick={toggleMenu}>Réalisations</Link>
+          <Link href="/equipe" className={`nav-mobile-link ${pathname === "/equipe" ? "active" : ""}`} onClick={toggleMenu}>Équipe</Link>
+          <Link href="/contact" className={`nav-mobile-link ${pathname === "/contact" ? "active" : ""}`} onClick={toggleMenu}>Contact</Link>
           
           <Link href="/contact" className="btn-cta mobile-cta" onClick={toggleMenu}>
             <i className="fa-regular fa-circle-check"></i> Devis gratuit

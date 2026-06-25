@@ -22,14 +22,14 @@ export default function Hero() {
           
           <p className="hero-description">
             <strong>OnDigital</strong> — agence basée à <strong>Cotonou, Bénin</strong>, spécialisée en <strong>marketing digital</strong>, <strong>création de sites web</strong> et <strong>graphisme</strong>.
-          </p>
+          </p> 
           
           <div className="hero-actions">
             <Link href="/contact" className="btn-hero-primary">
-              Planifier un appel gratuit
+              Planifier un appel <i className="fa-regular fa-calendar-check"></i>
             </Link>
             <Link href="/services" className="btn-hero-secondary">
-              Découvrir nos services
+              Découvrir nos services <i className="fa-solid fa-compass"></i>
             </Link>
           </div>
           
@@ -50,33 +50,37 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* BLOC DROITE : BENTO GRID VISUELS */}
+        {/* BLOC DROITE : BENTO GRID VISUELS DÉFILANTS */}
         <div className="hero-visual-grid">
-          {/* Colonne Gauche de la grille */}
-          <div className="grid-col">
-            <div className="grid-card size-laptop">
-              <Image src="/img/hero-web1.jpeg" alt="Création E-commerce Next.js" width={320} height={200} priority />
-            </div>
-            <div className="grid-card size-logo">
-              <Image src="/img/hero-web2.jpeg" alt="Design Identité Visuelle" width={320} height={200} priority />
-            </div>
-            <div className="grid-card size-banner">
-              <Image src="/img/hero-market2.jpeg" alt="Marketing Louer Event" width={320} height={160} priority />
+          
+          {/* Colonne Gauche : Défile de Haut en Bas */}
+          <div className="grid-col scroll-down">
+            <div className="grid-col-track">
+              {/* Groupe Initial */}
+              <div className="grid-card"><Image src="/img/hero-web1.jpeg" alt="Web 1" width={290} height={180} priority /></div>
+              <div className="grid-card"><Image src="/img/hero-web2.jpeg" alt="Web 2" width={280} height={170} priority /></div>
+              <div className="grid-card"><Image src="/img/hero-market2.jpeg" alt="Market 2" width={290} height={180} priority /></div>
+              {/* Doublon pour l'effet infini */}
+              <div className="grid-card"><Image src="/img/hero-web1.jpeg" alt="Web 1" width={290} height={180} priority /></div>
+              <div className="grid-card"><Image src="/img/hero-web2.jpeg" alt="Web 2" width={280} height={170} priority /></div>
+              <div className="grid-card"><Image src="/img/hero-market2.jpeg" alt="Market 2" width={290} height={180} priority /></div>
             </div>
           </div>
           
-          {/* Colonne Droite de la grille */}
-          <div className="grid-col mt-translate">
-            <div className="grid-card size-mockups">
-              <Image src="/img/hero-graphic1.jpeg" alt="Applications mobiles" width={320} height={240} priority />
-            </div>
-            <div className="grid-card size-feed">
-              <Image src="/img/hero-markt1.jpeg" alt="Social Media Grid" width={320} height={220} priority />
-            </div>
-            <div className="grid-card size-video">
-              <Image src="/img/hero-video1.jpeg" alt="Production Vidéo" width={320} height={180} priority />
+          {/* Colonne Droite : Défile de Bas en Haut */}
+          <div className="grid-col scroll-up">
+            <div className="grid-col-track">
+              {/* Groupe Initial */}
+              <div className="grid-card"><Image src="/img/hero-graphic1.jpeg" alt="Graphic 1" width={290} height={200} priority /></div>
+              <div className="grid-card"><Image src="/img/hero-markt1.jpeg" alt="Market 1" width={320} height={240} priority /></div>
+              <div className="grid-card"><Image src="/img/hero-video1.jpeg" alt="Video 1" width={280} height={170} priority /></div>
+              {/* Doublon pour l'effet infini */}
+              <div className="grid-card"><Image src="/img/hero-graphic1.jpeg" alt="Graphic 1" width={290} height={200} priority /></div>
+              <div className="grid-card"><Image src="/img/hero-markt1.jpeg" alt="Market 1" width={320} height={240} priority /></div>
+              <div className="grid-card"><Image src="/img/hero-video1.jpeg" alt="Video 1" width={280} height={170} priority /></div>
             </div>
           </div>
+
         </div>
 
       </div>
