@@ -83,6 +83,35 @@ export default function Hero() {
 
         </div>
 
+
+        {/* BLOC : VISIBLE UNIQUEMENT SUR TÉLÉPHONE (2 BANDES OPPOSÉES) */}
+        <div className="hero-mobile-slider">
+          
+          {/* Bande 1 : Défile vers la GAUCHE */}
+          <div className="mobile-slider-track scroll-left">
+            <div className="grid-card"><Image src="/img/hero-web1.jpeg" alt="Web 1" width={200} height={130} priority /></div>
+            <div className="grid-card"><Image src="/img/hero-web2.jpeg" alt="Web 2" width={200} height={130} priority /></div>
+            <div className="grid-card"><Image src="/img/hero-market2.jpeg" alt="Market 2" width={200} height={130} priority /></div>
+            {/* Doublon Bande 1 */}
+            <div className="grid-card"><Image src="/img/hero-web1.jpeg" alt="Web 1" width={200} height={130} priority /></div>
+            <div className="grid-card"><Image src="/img/hero-web2.jpeg" alt="Web 2" width={200} height={130} priority /></div>
+            <div className="grid-card"><Image src="/img/hero-market2.jpeg" alt="Market 2" width={200} height={130} priority /></div>
+          </div>
+
+          {/* Bande 2 : Défile vers la DROITE */}
+          <div className="mobile-slider-track scroll-right">
+            <div className="grid-card"><Image src="/img/hero-graphic1.jpeg" alt="Graphic 1" width={200} height={130} priority /></div>
+            <div className="grid-card"><Image src="/img/hero-markt1.jpeg" alt="Market 1" width={200} height={130} priority /></div>
+            <div className="grid-card"><Image src="/img/hero-video1.jpeg" alt="Video 1" width={200} height={130} priority /></div>
+            {/* Doublon Bande 2 */}
+            <div className="grid-card"><Image src="/img/hero-graphic1.jpeg" alt="Graphic 1" width={200} height={130} priority /></div>
+            <div className="grid-card"><Image src="/img/hero-markt1.jpeg" alt="Market 1" width={200} height={130} priority /></div>
+            <div className="grid-card"><Image src="/img/hero-video1.jpeg" alt="Video 1" width={200} height={130} priority /></div>
+          </div>
+
+        </div>
+
+
       </div>
     </section>
   );

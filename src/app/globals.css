@@ -170,6 +170,7 @@
   font-weight: 500;
 }
 
+
 /* BLOC DROITE - BENTO GRID MARQUEE UNIVERSEL */
 .hero-visual-grid {
   flex: 1;
@@ -260,22 +261,26 @@
 }
 
 /* Masquer la grille sur mobile pour éviter de surcharger l'écran */
-@media (max-width: 960px) {
+
+/* @media (max-width: 960px) {
   .hero-visual-grid {
     display: none;
   }
-}
+} */
 
-/* RESPONSIVE DESIGN (MOBILE & TABLETTE) */
+
 @media (max-width: 1024px) {
   .hero-container {
-    flex-direction: column;
+    display: flex;
+    flex-direction: column; /* Aligne le texte puis la grille en dessous */
+    align-items: center;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 0px;
   }
   
   .hero-content {
     max-width: 100%;
+    margin-bottom: 20px; /* Crée de l'espace avant la grille d'images */
   }
 
   .hero-title {
@@ -288,22 +293,24 @@
 
   .hero-stats {
     justify-content: center;
-    gap: 32px;
+    gap: 28px;
   }
 
   .hero-visual-grid {
     width: 100%;
-    margin-top: 40px;
+    max-width: 600px; /* Évite que la grille ne devienne trop géante en largeur sur tablette */
+    height: 400px; /* On réduit un peu la hauteur pour que ce soit harmonieux sur petit écran */
+    margin: 0 auto;
   }
   
   .mt-translate {
-    transform: translateY(0); /* On annule le décalage sur tablette/mobile pour que ça reste propre */
+    transform: translateY(0);
   }
 }
 
 @media (max-width: 640px) {
   .hero-section {
-    padding: 40px 0;
+    padding: 20px 0;
   }
 
   .hero-title {
@@ -324,7 +331,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 16px;
+    gap: 10px;
   }
   
   .stat-item {
@@ -332,15 +339,93 @@
     min-width: 45%;
   }
   
+  /* AJUSTEMENTS POUR LA GRILLE SUR TÉLÉPHONE */
   .hero-visual-grid {
+    height: 320px; /* Hauteur compacte idéale sur smartphone */
     gap: 12px;
   }
   
   .grid-col {
     gap: 12px;
   }
+
+  .grid-col-track {
+    gap: 12px; /* Applique le gap réduit sur le défilé pour éviter les décalages */
+  }
+
+  .grid-card {
+    border-radius: 14px; /* Coins légèrement plus doux sur mobile */
+  }
+
+  .grid-card img {
+    height: 130px; /* Hauteur d'image réduite pour s'adapter à la taille de l'écran */
+  }
 }
 
+.hero-mobile-slider {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  .hero-visual-grid {
+    display: none !important;
+  }
+
+  .hero-mobile-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Espace vertical entre la bande du haut et celle du bas */
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-top: 40px;
+    overflow: hidden;
+    position: relative;
+    mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  }
+
+  .mobile-slider-track {
+    display: flex;
+    gap: 12px;
+    width: max-content;
+    padding: 4px 0;
+  }
+
+  /* --- BANDE DU HAUT : VERS LA GAUCHE --- */
+  .mobile-slider-track.scroll-left {
+    animation: marqueeLeft 14s linear infinite;
+  }
+
+  /* --- BANDE DU BAS : VERS LA DROITE --- */
+  .mobile-slider-track.scroll-right {
+    animation: marqueeRight 14s linear infinite;
+  }
+
+  /* Styles communs des cartes sur mobile */
+  .hero-mobile-slider .grid-card {
+    width: 160px; /* Légèrement réduit pour que les deux lignes passent bien à l'écran */
+    flex-shrink: 0;
+  }
+
+  .hero-mobile-slider .grid-card img {
+    height: 110px;
+    object-fit: cover;
+  }
+}
+
+/* ==========================================================================
+   ANIMATIONS HORIZONTALES OPPOSÉES
+   ========================================================================== */
+
+@keyframes marqueeLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } /* Glisse vers la gauche */
+}
+
+@keyframes marqueeRight {
+  0% { transform: translateX(-50%); } /* Démarre décalé vers la gauche */
+  100% { transform: translateX(0); }  /* Glisse vers la droite */
+}
 
 /* SECTION SERVICES */
 .services-section {
@@ -1444,3 +1529,4 @@
     font-size: 32px;
   }
 }
+
