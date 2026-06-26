@@ -26,6 +26,7 @@ export default function Navbar() {
           <Link href="/services" className={`nav-link ${pathname === "/services" ? "active" : ""}`}>Services</Link>
           <Link href="/realisations" className={`nav-link ${pathname === "/realisations" ? "active" : ""}`}>Réalisations</Link>
           <Link href="/equipe" className={`nav-link ${pathname === "/equipe" ? "active" : ""}`}>Équipe</Link>
+          <Link href="/blog" className={`nav-link ${pathname === "/blog" ? "active" : ""}`}>Blog</Link>
           <Link href="/contact" className={`nav-link ${pathname === "/contact" ? "active" : ""}`}>Contact</Link>
         </nav>
 
@@ -56,6 +57,7 @@ export default function Navbar() {
           <Link href="/services" className={`nav-mobile-link ${pathname === "/services" ? "active" : ""}`} onClick={toggleMenu}>Services</Link>
           <Link href="/realisations" className={`nav-mobile-link ${pathname === "/realisations" ? "active" : ""}`} onClick={toggleMenu}>Réalisations</Link>
           <Link href="/equipe" className={`nav-mobile-link ${pathname === "/equipe" ? "active" : ""}`} onClick={toggleMenu}>Équipe</Link>
+          <Link href="/blog" className={`nav-mobile-link ${pathname === "/blog" ? "active" : ""}`} onClick={toggleMenu}>Blog</Link>
           <Link href="/contact" className={`nav-mobile-link ${pathname === "/contact" ? "active" : ""}`} onClick={toggleMenu}>Contact</Link>
           
           <Link href="/contact" className="btn-cta mobile-cta" onClick={toggleMenu}>

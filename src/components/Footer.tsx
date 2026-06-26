@@ -27,6 +27,7 @@ export default function Footer() {
           <Link href="/services" className="footer-link">Services</Link>
           <Link href="/realisations" className="footer-link">Réalisations</Link>
           <Link href="/equipe" className="footer-link">Équipe</Link>
+          <Link href="/blog" className="footer-link">Blog</Link>
           <Link href="/contact" className="footer-link">Contact</Link>
         </nav>
 
