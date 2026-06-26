@@ -24,7 +24,7 @@ export default function Hero() {
             <strong>OnDigital</strong> — agence basée à <strong>Cotonou, Bénin</strong>, spécialisée en <strong>marketing digital</strong>, <strong>création de sites web</strong> et <strong>graphisme</strong>.
           </p> 
           
-          <div className="hero-actions">
+          <div className="hero-actions reveal-section">
             <Link href="/contact" className="btn-hero-primary">
               Planifier un appel <i className="fa-regular fa-calendar-check"></i>
             </Link>
@@ -34,7 +34,7 @@ export default function Hero() {
           </div>
           
           {/* STATISTIQUES */}
-          <div className="hero-stats">
+          <div className="hero-stats reveal-section">
             <div className="stat-item">
               <span className="stat-number">+50</span>
               <span className="stat-label">Projets livrés</span>

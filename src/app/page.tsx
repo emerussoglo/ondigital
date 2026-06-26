@@ -3,6 +3,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import Hero from '@/components/Hero';
 import PricingSection from '@/components/PricingSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
+import PosterCarouselSection from '@/components/PosterCarouselSection';
+import WebProjectsSection from '@/components/WebProjectsSection';
 import Link from 'next/link';
 
 export default function Page() {
@@ -157,7 +159,7 @@ useEffect(() => {
           </div>
 
           {/* BOUTON DE BAS DE SECTION */}
-          <div className="services-footer-action">
+          <div className="services-footer-action reveal-section">
             <Link href="/services" className="btn-services-all">
               Voir tous nos services <i className="fa-solid fa-arrow-right"></i>
             </Link>
@@ -221,6 +223,8 @@ useEffect(() => {
         </div>
       </section>
 
+<WebProjectsSection />
+<PosterCarouselSection />
 
       {/* SECTION FAQ */}
       <section className="faq-section reveal-section">
@@ -313,7 +317,7 @@ useEffect(() => {
               Prêt à <span className="text-italic-white">propulser </span> votre activité ?
             </h2>
             
-            <div className="cta-action">
+            <div className="cta-action reveal-section">
               <Link href="/contact" className="btn-cta-white">
                 Réserver un appel stratégique
               </Link>
@@ -329,6 +333,7 @@ useEffect(() => {
 
 
       <TestimonialsSection />
+      
 
 
       {/* 6. BOUTON RETOUR EN HAUT FLOUTÉ / FIXE */}

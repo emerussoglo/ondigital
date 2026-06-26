@@ -71,11 +71,11 @@ export default function PricingSection() {
   ];
 
   return (
-    <section className="pricing-section">
+    <section className="pricing-section reveal-section">
       <div className="pricing-container">
         
         {/* EN-TÊTE DE LA SECTION */}
-        <div className="pricing-header">
+        <div className="pricing-header ">
           <div className="section-badge">TARIFS</div>
           <h2 className="pricing-main-title">
             Des tarifs <span className="text-italic-blue">clairs</span>, adaptés à vos besoins.
@@ -86,7 +86,7 @@ export default function PricingSection() {
         </div>
 
         {/* GRILLE DES FORFAITS */}
-        <div className="pricing-grid">
+        <div className="pricing-grid reveal-section">
           {plans.map((plan, index) => (
             <div 
               key={index} 
@@ -96,7 +96,7 @@ export default function PricingSection() {
                 <span className="popular-badge">{plan.badge}</span>
               )}
               
-              <div className="card-top">
+              <div className="card-top reveal-section">
                 <h3 className="plan-title">{plan.title}</h3>
                 <p className="plan-desc">{plan.description}</p>
                 <div className="plan-price-block">
@@ -119,7 +119,7 @@ export default function PricingSection() {
               </ul>
 
               {/* BOUTON D'ACTION */}
-              <div className="card-bottom">
+              <div className="card-bottom reveal-section">
                 <Link 
                   href={plan.ctaLink} 
                   className={`pricing-cta-btn ${plan.popular ? 'btn-blue' : 'btn-outline'}`}
