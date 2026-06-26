@@ -260,13 +260,7 @@
   display: block;
 }
 
-/* Masquer la grille sur mobile pour éviter de surcharger l'écran */
 
-/* @media (max-width: 960px) {
-  .hero-visual-grid {
-    display: none;
-  }
-} */
 
 
 @media (max-width: 1024px) {
@@ -318,13 +312,19 @@
   }
 
   .hero-actions {
+    width: 100%;
+    display: flex;
+    margin: auto;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 12px;
   }
 
   .btn-hero-primary, .btn-hero-secondary {
-    width: 100%;
+    width: 80%;
     text-align: center;
+    padding: 12px 0px;
   }
 
   .hero-stats {
@@ -332,6 +332,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 10px;
+
   }
   
   .stat-item {
@@ -374,7 +375,7 @@
   .hero-mobile-slider {
     display: flex;
     flex-direction: column;
-    gap: 16px; /* Espace vertical entre la bande du haut et celle du bas */
+    gap: 15px; /* Espace vertical entre la bande du haut et celle du bas */
     width: 100vw;
     margin-left: calc(-50vw + 50%);
     margin-top: 40px;
@@ -384,7 +385,7 @@
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
   }
 
-  .mobile-slider-track {
+  .mobile-slider-track { 
     display: flex;
     gap: 12px;
     width: max-content;
