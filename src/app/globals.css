@@ -882,6 +882,7 @@
 /* LA BANNIÈRE BLEUE */
 .cta-banner {
   background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  background: linear-gradient(135deg, #050a14 0%, #111f44 100%);
   border-radius: 32px;
   padding: 80px 40px;
   text-align: center;
@@ -960,6 +961,124 @@
 
 
 
+/* S'assure que le wrapper du bouton est bien aligné au centre du bloc CTA */
+.cta-action {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 24px 0; /* Ajoute un espacement respirable entre le titre et la note */
+}
+
+/* --- LE CSS DU BOUTON COSMIQUE FLEXIBLE --- */
+.uiverse-button-wrapper {
+  position: relative;
+  display: inline-block;
+  border-radius: 14px;
+}
+
+.real-button-link {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff !important;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+}
+
+.button-visual-container {
+  position: relative;
+  border-radius: 14px;
+  overflow: visible;
+}
+
+.button-border {
+  padding: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+}
+
+.button-fake-text {
+  padding: 16px 32px;
+  font-size: 14px;
+  font-weight: 700;
+  color: transparent;
+  background: #111215; /* Fond noir profond d'origine */
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.spin {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.35;
+  overflow: hidden;
+  transition: opacity 0.3s;
+  border-radius: 14px;
+}
+
+.real-button-link:hover ~ .button-visual-container .spin {
+  opacity: 1;
+}
+
+.real-button-link:hover ~ .button-visual-container .spin::before {
+  animation-play-state: running;
+}
+
+.spin-blur {
+  filter: blur(1.5em) url(#unopaq);
+}
+
+.spin-intense {
+  inset: -2px;
+  filter: blur(4px) url(#unopaq2);
+}
+
+.spin-inside {
+  inset: -2px;
+  filter: blur(2px) url(#unopaq3);
+  z-index: 0;
+}
+
+.spin::before {
+  content: "";
+  position: absolute;
+  inset: -150%;
+  background: linear-gradient(90deg, #ff5500 30%, transparent 50%, #0055ff 70%);
+  animation: speen 6s linear infinite;
+  animation-play-state: paused;
+}
+
+.spin-intense::before {
+  background: linear-gradient(90deg, #ff9955 20%, transparent 45% 55%, #5599ff 80%);
+}
+
+.spin-inside::before {
+  background: linear-gradient(90deg, #ffcc99 30%, transparent 45% 55%, #99ccff 70%);
+}
+
+@keyframes speen {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 480px) {
+  .real-button-link, .button-fake-text {
+    padding: 14px 20px;
+    font-size: 13px;
+  }
+}
 
 /* COMPOSANT PAGE SERVICES */
 .services-page {
@@ -1104,7 +1223,7 @@
 }
 
 .btn-services-cta {
-  background-color: #2563eb;
+  background-color: #2563eb; 
   color: var(--color-white);
   padding: 16px 36px;
   font-size: 15px;
@@ -1119,6 +1238,7 @@
   background-color: #1d4ed8;
   transform: translateY(-1px);
 }
+
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 1200px) {

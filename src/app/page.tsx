@@ -310,26 +310,58 @@ useEffect(() => {
 
       {/* SECTION CTA - BANNIÈRE DE FIN */}
       <section className="cta-section reveal-section">
-        <div className="cta-container">
-          <div className="cta-banner">
-            
-            <h2 className="cta-title">
-              Prêt à <span className="text-italic-white">propulser </span> votre activité ?
-            </h2>
-            
-            <div className="cta-action reveal-section">
-              <Link href="/contact" className="btn-cta-white">
+  <div className="cta-container">
+    <div className="cta-banner">
+      
+      {/* 🟢 LES FILTRES SVG SONT DISCRÈTEMENT PLACÉS ICI */}
+      <svg style={{ position: 'absolute', width: 0, height: 0, pointerEvents: 'none' }}>
+        <filter width="300%" x="-100%" height="300%" y="-100%" id="unopaq">
+          <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 9 0" />
+        </filter>
+        <filter width="300%" x="-100%" height="300%" y="-100%" id="unopaq2">
+          <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 3 0" />
+        </filter>
+        <filter width="300%" x="-100%" height="300%" y="-100%" id="unopaq3">
+          <feColorMatrix values="1 0 0 0.2 0  0 1 0 0.2 0  0 0 1 0.2 0  0 0 0 2 0" />
+        </filter>
+      </svg>
+      
+      <h2 className="cta-title">
+        Prêt à <span className="text-italic-white">propulser </span> votre activité ?
+      </h2>
+      
+      {/* 🟢 BLOC BOUTON EFFECT INTÉGRÉ ICI */}
+      <div className="cta-action reveal-section">
+        <div className="uiverse-button-wrapper">
+          
+          {/* Le vrai lien Next.js cliquable qui reçoit l'interaction */}
+          <Link href="/contact" className="real-button-link">
+            Réserver un appel stratégique
+          </Link>
+          
+          {/* Les couches visuelles de lueurs animées */}
+          <div className="button-visual-container">
+            <div className="spin spin-blur"></div>
+            <div className="spin spin-intense"></div>
+            <div className="button-border">
+              <div className="spin spin-inside"></div>
+              {/* Gardien de la dimension/taille du bouton */}
+              <div className="button-fake-text">
                 Réserver un appel stratégique
-              </Link>
+              </div>
             </div>
-            
-            <p className="cta-note">
-              Gratuit — Sans engagement
-            </p>
-
           </div>
+
         </div>
-      </section>
+      </div>
+      
+      <p className="cta-note">
+        Gratuit — Sans engagement
+      </p>
+
+    </div>
+  </div>
+</section>
 
 
       <TestimonialsSection />
