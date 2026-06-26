@@ -904,7 +904,7 @@ a.info-value:hover {
   background-color: var(--color-white);
   border: 1px solid #e2e8f0;
   border-radius: 24px;
-  padding: 40px 32px;
+  padding: 30px 25px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -945,7 +945,7 @@ a.info-value:hover {
   font-size: 22px;
   font-weight: 800;
   color: var(--color-text-dark);
-  margin-bottom: 12px;
+  margin-bottom: 1px;
 }
 
 .plan-desc {
@@ -960,12 +960,13 @@ a.info-value:hover {
 .plan-price-block {
   display: flex;
   align-items: baseline;
+  justify-content: center;
   color: var(--color-text-dark);
-  margin-bottom: 12px;
+  margin-bottom: 0px;
 }
 
 .price-amount {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 800;
   letter-spacing: -1px;
 }
@@ -998,9 +999,9 @@ a.info-value:hover {
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   flex-grow: 1; /* Pousse le bouton d'action vers le bas pour équilibrer les cartes */
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }
 
 .feature-item {
@@ -1023,7 +1024,7 @@ a.info-value:hover {
   display: block;
   width: 100%;
   text-align: center;
-  padding: 14px 24px;
+  padding: 10px 20px;
   font-size: 15px;
   font-weight: 700;
   border-radius: 12px;
@@ -1062,17 +1063,17 @@ a.info-value:hover {
   }
   
   .pricing-card {
-    padding: 32px 24px;
+    padding: 25px 15px;
   }
 }
 
 @media (max-width: 640px) {
   .pricing-section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .pricing-main-title {
-    font-size: 32px;
+    font-size: 30px;
   }
 }
 

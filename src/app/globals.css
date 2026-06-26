@@ -378,8 +378,9 @@
     gap: 15px; /* Espace vertical entre la bande du haut et celle du bas */
     width: 100vw;
     margin-left: calc(-50vw + 50%);
-    margin-top: 40px;
+    margin-top: 10px;
     overflow: hidden;
+
     position: relative;
     mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
@@ -531,14 +532,14 @@
   font-size: 22px;
   font-weight: 700;
   color: var(--color-text-dark);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .service-card-desc {
   font-size: 14.5px;
-  line-height: 1.6;
+  line-height: 1.5;
   color: var(--color-text-muted);
-  margin-bottom: 28px;
+  margin-bottom: 25px;
   min-height: 72px; /* Garde l'alignement équilibré entre les 3 cartes */
 }
 
@@ -577,7 +578,7 @@
 .btn-services-all {
   background-color: var(--color-primary);
   color: var(--color-white) !important;
-  padding: 14px 32px;
+  padding: 12px 30px;
   border-radius: 12px;
   font-size: 15px;
   font-weight: 600;
@@ -604,13 +605,13 @@
 @media (max-width: 1024px) {
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    gap: 20px;
   }
 }
 
 @media (max-width: 768px) {
   .services-section {
-    padding: 60px 0;
+    padding: 25px 0;
   }
 
   .services-title {
@@ -619,21 +620,26 @@
 
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
   }
 
   .service-card {
-    padding: 32px 24px;
+    padding: 28px 18px;
   }
 
   .service-card-desc {
     min-height: auto;
   }
-  
-  .btn-services-all {
+  .services-footer-action {
     width: 100%;
-    justify-content: center;
   }
+  .btn-services-all {
+    width: 80%;
+    justify-content: center;
+      padding: 12px 30px;
+  }
+ 
+
 }
 
 
@@ -647,13 +653,13 @@
 .process-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
 /* EN-TÊTE PROCESSUS */
 .process-header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 30px;
 }
 
 .process-title {
@@ -667,7 +673,7 @@
 .process-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
+  gap: 25px;
 }
 
 /* CARTE ÉTAPE */
@@ -675,7 +681,7 @@
   background-color: var(--color-white);
   border: 1px solid #e5e7eb;
   border-radius: 24px;
-  padding: 50px 40px;
+  padding: 30px 25px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -728,11 +734,11 @@
 
 @media (max-width: 768px) {
   .process-section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .process-title {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .process-grid {
@@ -741,7 +747,7 @@
   }
 
   .process-card {
-    padding: 40px 24px;
+    padding: 30px 24px;
   }
 }
 
@@ -757,13 +763,13 @@
 .faq-container {
   max-width: 800px; /* Plus serré pour une lecture confortable de la FAQ */
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
 /* EN-TÊTE FAQ */
 .faq-header {
   text-align: center;
-  margin-bottom: 64px;
+  margin-bottom: 50px;
 }
 
 .faq-title {
@@ -842,17 +848,17 @@
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
   .faq-section {
-    padding: 60px 0;
+    padding: 40px 0;
   }
 
   .faq-title {
-    font-size: 32px;
+    font-size: 30px;
   }
 
   .faq-question {
     font-size: 15px;
-    padding: 20px 0;
-    gap: 16px; /* Évite que le texte colle à l'icône sur petit écran */
+    padding: 15px 0;
+    gap: 12px; /* Évite que le texte colle à l'icône sur petit écran */
   }
   
   .faq-answer {
@@ -863,12 +869,12 @@
 
 /* SECTION CTA */
 .cta-section {
-  padding: 20px 0 60px 0; /* Plus d'espace en bas pour clore la page */
+  padding: 15px 0 40px 0; /* Plus d'espace en bas pour clore la page */
   background-color: var(--color-white);
 }
 
 .cta-container {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 24px;
 }
@@ -930,7 +936,7 @@
 /* RESPONSIVE DESIGN (Image image_fa74d9.png) */
 @media (max-width: 768px) {
   .cta-section {
-    padding: 40px 0 80px 0;
+    padding: 35px 0 60px 0;
   }
 
   .cta-banner {
@@ -940,12 +946,12 @@
 
   .cta-title {
     font-size: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 
   .btn-cta-white {
     width: 100%; /* S'adapte à la largeur du conteneur sur mobile */
-    padding: 16px 20px;
+    padding: 12px 18px;
     font-size: 15px;
     text-align: center;
   }
@@ -1360,9 +1366,6 @@
 }
 
 
-/* ==========================================================================
-   MODALE DE PREMIER PLAN (LIGHTBOX)
-   ========================================================================== */
 .lightbox-overlay {
   position: fixed;
   inset: 0;
@@ -1395,15 +1398,15 @@
   position: absolute;
   top: 20px;
   right: 20px;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: rgba(243, 244, 246, 0.9);
   border: none;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
+  font-size: 12px;
   color: var(--color-text-dark);
   cursor: pointer;
   z-index: 10;
@@ -1459,6 +1462,7 @@
   margin-bottom: 32px;
 }
 
+
 /* BOUTON D'ACTION SITE INTERNET */
 .lightbox-action-btn {
   align-self: start;
@@ -1469,7 +1473,7 @@
   font-size: 15px;
   font-weight: 700;
   display: inline-flex;
-  align-items: center;
+  align-items: center; 
   gap: 10px;
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.2);
   transition: background-color 0.2s ease;
@@ -1529,5 +1533,55 @@
   .portfolio-title {
     font-size: 32px;
   }
+}
+
+
+.project-card-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--color-text-muted, #64748b);
+  margin-top: 8px;
+}
+
+/* MODIFICATION : Devient une seule colonne centrée pour l'image */
+.lightbox-content.solo-image {
+  max-width: 700px; /* Largeur idéale pour admirer une affiche ou un screenshot */
+  grid-template-columns: 1fr; 
+  background-color: transparent; /* Supprime le fond blanc inutile */
+  box-shadow: none;
+}
+
+.lightbox-content.solo-image .lightbox-image-side {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightbox-content.solo-image .lightbox-image-side img {
+  max-height: 80vh;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain; /* L'image garde ses proportions d'origine sans être rognée */
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Positionnement du bouton sous l'image si présent */
+.lightbox-floating-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+  animation: fadeIn 0.3s ease;
+}
+
+
+/* Changement de couleur du bouton de fermeture pour qu'il ressorte sur le fond sombre */
+.lightbox-content.solo-image .lightbox-close-btn {
+  background-color: #000;
+  backdrop-filter: blur(4px);
+  color: #ffffff;
+  top: 10px;
+  right: 10px;
 }
 

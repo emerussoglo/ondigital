@@ -152,44 +152,44 @@ export default function RealisationsPage() {
               <div className="project-info">
                 <span className="project-cat-badge">{project.categoryLabel}</span>
                 <h3 className="project-card-title">{project.title}</h3>
+                {/* 🟢 AJOUT : Description visible directement sur la carte */}
+                <p className="project-card-desc">{project.description}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* MODALE DE MISE EN ÉVIDENCE (LIGHTBOX) */}
-        {selectedProject && (
-          <div className="lightbox-overlay" onClick={() => setSelectedProject(null)}>
-            <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
-              
-              <button className="lightbox-close-btn" onClick={() => setSelectedProject(null)}>
-                <i className="fa-solid fa-xmark"></i>
-              </button>
+        {/* MODALE DE MISE EN ÉVIDENCE (LIGHTBOX ÉPURÉE) */}
+{selectedProject && (
+  <div className="lightbox-overlay" onClick={() => setSelectedProject(null)}>
+    <div className="lightbox-content solo-image" onClick={(e) => e.stopPropagation()}>
+      
+      <button className="lightbox-close-btn" onClick={() => setSelectedProject(null)}>
+        <i className="fa-solid fa-xmark"></i>
+      </button>
 
-              <div className="lightbox-image-side">
-                <img src={selectedProject.image} alt={selectedProject.title} />
-              </div>
+      {/* L'image prend toute la place */}
+      <div className="lightbox-image-side">
+        <img src={selectedProject.image} alt={selectedProject.title} />
+      </div>
 
-              <div className="lightbox-details-side">
-                <span className="lightbox-cat">{selectedProject.categoryLabel}</span>
-                <h2 className="lightbox-title">{selectedProject.title}</h2>
-                <p className="lightbox-desc">{selectedProject.description}</p>
-                
-                {selectedProject.category === 'web' && selectedProject.link && (
-                  <a 
-                    href={selectedProject.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer" 
-                    className="lightbox-action-btn"
-                  >
-                    Visiter le site web <i className="fa-solid fa-arrow-up-right-from-square"></i>
-                  </a>
-                )}
-              </div>
+      {/* Uniquement le bouton si c'est un site web */}
+      {selectedProject.category === 'web' && selectedProject.link && (
+        <div className="lightbox-floating-action">
+          <a 
+            href={selectedProject.link} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="lightbox-action-btn"
+          >
+            Visiter le site web <i className="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div> 
+      )}
 
-            </div>
-          </div>
-        )}
+    </div>
+  </div>
+)}
 
       </div>
     </main>
