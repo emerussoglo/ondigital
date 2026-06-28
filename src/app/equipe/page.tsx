@@ -9,6 +9,7 @@ interface Member {
   image: string;
   description: string;
   linkedin: string;
+  facebook: string;
   twitter: string;
   email: string;
 }
@@ -22,6 +23,7 @@ export default function EquipePage() {
       image: "/img/thomas.jpeg",
       description: "10 ans en stratégie digitale et acquisition. Pilote la performance des campagnes.",
       linkedin: "#",
+      facebook: "https://www.facebook.com/profile.php?id=61580999084062",
       twitter: "#",
       email: "mailto:thomas@ondigital.bj"
     },
@@ -31,7 +33,8 @@ export default function EquipePage() {
       badge: "DÉVELOPPEMENT WEB",
       image: "/img/emerus.jpeg",
       description: "Spécialiste des sites rapides, sécurisés et orientés conversion.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/em%C3%A9rus-soglo-396aba3b9/",
+      facebook: "https://www.facebook.com/eme.lux.8609",
       twitter: "#",
       email: "mailto:emerussoglo@gmail.com"
     },
@@ -41,9 +44,10 @@ export default function EquipePage() {
       badge: "DÉVELOPPEMENT WEB",
       image: "/img/jovis.jpeg",
       description: "Spécialiste des sites rapides, sécurisés et orientés conversion.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/jovisleprinceyayi/",
+      facebook: "https://www.facebook.com/jovis.yayi.2025",
       twitter: "#",
-      email: "mailto:emerussoglo@gmail.com"
+      email: "mailto:yayijovisleprince@gmail.com"
     },
     {
       name: "TODAN Carlos",
@@ -52,6 +56,7 @@ export default function EquipePage() {
       image: "/img/carlos.jpeg",
       description: "Identités visuelles et supports graphiques pour des marques qui marquent.",
       linkedin: "#",
+      facebook: "https://www.facebook.com/carlos.todan",
       twitter: "#",
       email: "mailto:carlos@ondigital.bj"
     }
@@ -100,6 +105,9 @@ export default function EquipePage() {
                 <div className="member-socials">
                   <a href={member.linkedin} className="member-social-btn">
                     <i className="fa-brands fa-linkedin-in"></i>
+                  </a>
+                  <a href={member.facebook} className="member-social-btn">
+                    <i className="fa-brands fa-facebook"></i>
                   </a>
                   <a href={member.twitter} className="member-social-btn">
                     <i className="fa-brands fa-x-twitter"></i>
