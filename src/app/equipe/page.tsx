@@ -36,6 +36,16 @@ export default function EquipePage() {
       email: "mailto:emerussoglo@gmail.com"
     },
     {
+      name: "YAYI Jovis",
+      role: "Développeur web",
+      badge: "DÉVELOPPEMENT WEB",
+      image: "/img/jovis.jpeg",
+      description: "Spécialiste des sites rapides, sécurisés et orientés conversion.",
+      linkedin: "#",
+      twitter: "#",
+      email: "mailto:emerussoglo@gmail.com"
+    },
+    {
       name: "TODAN Carlos",
       role: "Graphiste designer",
       badge: "GRAPHISME",

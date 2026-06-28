@@ -70,6 +70,7 @@ export default function PosterCarouselSection() {
             </h2>
           </div>
           
+          
           {/* Les flèches de direction */}
           <div className="carousel-actions-nav">
             <button className="nav-arrow-btn" onClick={() => scroll('left')} aria-label="Précédent">
@@ -97,7 +98,7 @@ export default function PosterCarouselSection() {
                 <h3 className="poster-card-title">{poster.title}</h3>
                 <p className="poster-card-desc">{poster.description}</p>
               </div>
-
+ 
             </div>
           ))}
         </div>

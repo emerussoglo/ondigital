@@ -2025,14 +2025,25 @@
 .posters-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  /* align-items: flex-end; */
+  flex-direction: column;
   margin-bottom: 36px;
+
 }
 
+.posters-header .header-text-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 .carousel-actions-nav {
   display: flex;
   gap: 12px;
   margin-bottom: 4px;
+  align-items: flex-end;
+  justify-content: flex-end; /* 🟢 Aligne les boutons vers la droite */
+  flex: 1; /* Permet d'occuper tout l'espace disponible pour pousser vers la droite */
 }
 
 .nav-arrow-btn {
