@@ -69,7 +69,7 @@ useEffect(() => {
   // Un léger délai de 800ms pour laisser l'animation s'exprimer proprement
   const timer = setTimeout(() => {
     setIsLoading(false);
-  }, 800);
+  }, 900);
 
   return () => clearTimeout(timer);
 }, []);

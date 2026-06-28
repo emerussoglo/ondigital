@@ -33,6 +33,9 @@ export default function Footer() {
 
         {/* ICÔNES DES RÉSEAUX SOCIAUX */}
         <div className="footer-socials">
+          <a href="https://www.tiktok.com/@ondigital_bj" target="_blank" rel="noopener noreferrer" className="social-icon-btn">
+            <i className="fa-brands fa-tiktok"></i>
+          </a>
           <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-icon-btn">
             <i className="fa-brands fa-linkedin-in"></i>
           </a>

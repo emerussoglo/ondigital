@@ -73,32 +73,32 @@ export default function ServicesPage() {
       ]
     },
     {
-      title: "Graphisme",
-      subtitle: "Une image de marque cohérente et professionnelle.",
-      mainIconClass: "fa-solid fa-palette",
-      items: [
-        {
-          title: "Logo & identité visuelle",
-          desc: "Logo, palette, typographies et charte graphique complète.",
-          iconClass: "fa-solid fa-paint-roller"
-        },
-        {
-          title: "Flyers & affiches",
-          desc: "Supports print pour vos événements, promotions et communications.",
-          iconClass: "fa-solid fa-file-image"
-        },
-        {
-          title: "Visuels réseaux sociaux",
-          desc: "Templates et carrousels percutants pour vos publications.",
-          iconClass: "fa-solid fa-square-check"
-        },
-        {
-          title: "Vidéos & motion",
-          desc: "Vidéos promotionnelles courtes pour vos campagnes.",
-          iconClass: "fa-solid fa-video"
-        }
-      ]
+  title: "Design & Vidéo",
+  subtitle: "Une image de marque forte et des vidéos qui captivent votre audience.",
+  mainIconClass: "fa-solid fa-photo-film",
+  items: [
+    {
+      title: "Logo & identité visuelle",
+      desc: "Logo, palette, typographies et charte graphique complète.",
+      iconClass: "fa-solid fa-paint-roller"
+    },
+    {
+      title: "Affiches publicitaires & Flyers",
+      desc: "Supports print et digitaux pour vos événements et communications.",
+      iconClass: "fa-solid fa-file-image"
+    },
+    {
+      title: "Visuels réseaux sociaux",
+      desc: "Templates et carrousels uniques pour vos publications quotidiennes.",
+      iconClass: "fa-solid fa-hashtag"
+    },
+    {
+      title: "Montage vidéo & Production",
+      desc: "Vidéos pros, Reels, TikTok et formats courts optimisés pour convertir.",
+      iconClass: "fa-solid fa-video"
     }
+  ]
+}
   ];
 
   // Gestion de l'effet d'apparition au défilement (Reveal Effect)

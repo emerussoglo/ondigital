@@ -45,9 +45,9 @@ export default function Hero() {
             <span className="text-gradient">simplicité.</span>
           </h1>
           
-          <p className="hero-description">
-            <strong>OnDigital</strong> — agence basée à <strong>Cotonou, Bénin</strong>, spécialisée en <strong>marketing digital</strong>, <strong>création de sites web</strong> et <strong>graphisme</strong>.
-          </p> 
+         <p className="hero-description">
+  <strong>OnDigital</strong> — agence basée à <strong>Cotonou, Bénin</strong>, spécialisée en <strong>marketing digital</strong>, <strong>création de sites web</strong>, <strong>design graphique</strong> et <strong>création de vidéo</strong>.
+</p>
           
           <div className="hero-actions reveal-section">
             <Link href="/contact" className="btn-hero-primary">
