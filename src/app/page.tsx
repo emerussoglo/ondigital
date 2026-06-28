@@ -139,22 +139,25 @@ useEffect(() => {
               </ul>
             </div>
 
-            {/* CARTE 3 : GRAPHISME */}
-            <div className="service-card">
-              <div className="service-icon-wrapper">
-                <i className="fa-solid fa-palette"></i>
-              </div>
-              <h3 className="service-card-title">Graphisme</h3>
-              <p className="service-card-desc">
-                Identité visuelle, logos, flyers, supports print et visuels pour vos réseaux sociaux.
-              </p>
-              <ul className="service-list">
-                <li><i className="fa-solid fa-circle-check"></i> Logo & identité visuelle</li>
-                <li><i className="fa-solid fa-circle-check"></i> Flyers & affiches</li>
-                <li><i className="fa-solid fa-circle-check"></i> Visuels réseaux sociaux</li>
-                <li><i className="fa-solid fa-circle-check"></i> Charte graphique</li>
-              </ul>
-            </div>
+            {/* CARTE 3 : GRAPHISME & VIDÉO */}
+<div className="service-card">
+  <div className="service-icon-wrapper">
+    <i className="fa-solid fa-photo-film"></i> {/* Icône mise à jour pour représenter le design + la vidéo */}
+  </div>
+  
+  <h3 className="service-card-title">Design & Vidéo</h3>
+  
+  <p className="service-card-desc">
+    Identité visuelle, affiches percutantes et montage vidéo professionnel pour captiver votre audience sur les réseaux sociaux.
+  </p>
+  
+  <ul className="service-list">
+    <li><i className="fa-solid fa-circle-check"></i> Logo & identité de marque</li>
+    <li><i className="fa-solid fa-circle-check"></i> Affiches publicitaires & Flyers</li>
+    <li><i className="fa-solid fa-circle-check"></i> Montage vidéo (Reels, TikTok, Shorts)</li>
+    <li><i className="fa-solid fa-circle-check"></i> Graphismes & visuels réseaux sociaux</li>
+  </ul>
+</div>
 
           </div>
 

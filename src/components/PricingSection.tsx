@@ -52,22 +52,22 @@ export default function PricingSection() {
       popular: true
     },
     {
-      title: "Graphisme & Branding",
-      price: "60 000",
-      period: "unique",
-      description: "Une identité visuelle professionnelle complète pour marquer les esprits de vos clients.",
-      features: [
-        "Conception de Logo moderne (3 propositions)",
-        "Charte graphique (palettes & typographies)",
-        "Design de cartes de visite",
-        "Templates de publication réseaux sociaux",
-        "Supports Print (Flyer ou Affiche)",
-        "Fichiers sources haute définition"
-      ],
-      ctaText: "Commander mon pack",
-      ctaLink: "/contact",
-      popular: false
-    }
+  title: "Design & Production Vidéo",
+  price: "60 000",
+  period: "unique",
+  description: "Le pack ultime pour booster votre image : une identité visuelle forte et des vidéos percutantes pour vos réseaux.",
+  features: [
+    "Conception de Logo moderne (3 propositions)",
+    "Charte graphique (palettes & typographies)",
+    "Supports Print (Affiches, Flyers & Visuels)",
+    "Montage Vidéo pro (Reels, TikTok ou Shorts)",
+    "Intégration d'effets visuels et audio",
+    "Templates réseaux sociaux & Fichiers sources HD"
+  ],
+  ctaText: "Commander mon pack",
+  ctaLink: "/contact",
+  popular: false
+}
   ];
 
   return (
