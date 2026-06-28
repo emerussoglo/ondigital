@@ -355,11 +355,11 @@ useEffect(() => {
         </div>
       </div>
       
-      <p className="cta-note">
+      <p className="cta-note"> 
         Gratuit — Sans engagement
       </p>
 
-    </div>
+    </div> 
   </div>
 </section>
 

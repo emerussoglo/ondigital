@@ -235,9 +235,10 @@ a {
 
 /* FOOTER PRINCIPAL */
 .main-footer {
-  padding: 60px 0 40px 0;
+  padding: 50px 0 20px 0;
   background-color: var(--color-white);
-  border-top: 1px solid #f3f4f6; /* Une très légère séparation haute */
+  background-color: #000;
+  border-top: 1px solid #f3f4f6; 
   position: relative; /* Indispensable pour caler le gradient tout en bas */
   overflow: hidden;
 }
@@ -262,7 +263,7 @@ a {
 .footer-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px 10px 24px; /* Ajout d'un petit padding-bottom pour ne pas coller à la bande */
+  padding:  10px 13px; /* Ajout d'un petit padding-bottom pour ne pas coller à la bande */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -291,6 +292,7 @@ a {
   font-size: 15px;
   font-weight: 500;
   color: var(--color-text-dark);
+  color: var(--color-border);
   transition: color var(--transition-fast);
 }
 
@@ -304,7 +306,7 @@ a {
   justify-content: center;
   align-items: center;
   gap: 12px;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
 .social-icon-btn {
@@ -315,7 +317,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4b5563; /* Gris sombre discret */
+  color: #fff; /* Gris sombre discret */
   font-size: 14px;
   transition: all var(--transition-fast);
 }
@@ -349,6 +351,73 @@ a {
   }
 }
 
+/* ==========================================================================
+   FOOTER BRANDING EFFECT (D'APRÈS IMAGE_4354FE.PNG)
+   ========================================================================== */
+.site-footer {
+  background-color: #000000; /* Fond noir profond impératif pour l'effet */
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 4px;
+}
+
+.footer-bottom-branding {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px; /* Espace après le contenu classique de ton footer */
+  position: relative;
+}
+
+/* CONTENEUR DU LOGO GÉANT */
+.footer-giant-logo-wrapper {
+  width: 100%;
+  max-width: 1100px; /* Ajuste la taille maximale du logo géant */
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  pointer-events: none; /* Empêche de bloquer la sélection de texte ou clics */
+  user-select: none;
+}
+
+/* L'IMAGE DU LOGO AVEC LE COUPE-GRADIENT PROGRESSEF */
+.footer-giant-logo {
+  width: 100%;
+  height: auto;
+  margin-top: -30px;
+  object-fit: contain;
+  opacity: 0.3; /* Rendu très discret et premium (ajuste entre 0.10 et 0.20 selon ton image) */
+   -webkit-mask-image: linear-gradient(to bottom, rgb(27, 27, 27) 20%, rgba(22, 22, 22, 0) 90%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 90%);
+}
+
+/* PETITE ÉCRITURE COPYRIGHT TOUT EN BAS */
+.footer-copyright {
+  font-size: 11px; 
+  color: #475569; 
+  letter-spacing: 0.5px;
+  margin-top: -10px; 
+  text-align: center;
+  z-index: 2;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .footer-bottom-branding {
+    margin-top: 40px;
+  }
+  
+  .footer-giant-logo-wrapper {
+    padding: 0 20px;
+  }
+  
+  .footer-copyright {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+}
 
 /* COMPOSANT PAGE CONTACT */
 .contact-page {

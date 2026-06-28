@@ -9,7 +9,7 @@ export default function Footer() {
         
         {/* LOGO DE L'AGENCE */}
         <div className="footer-logo-wrapper">
-          <Link href="/">
+          {/* <Link href="/">
             <Image 
               src="/img/logo.png" 
               alt="OnDigital" 
@@ -18,7 +18,7 @@ export default function Footer() {
               className="footer-logo"
               priority
             />
-          </Link>
+          </Link> */}
         </div>
 
         {/* LIENS DE NAVIGATION */}
@@ -47,10 +47,21 @@ export default function Footer() {
           </a>
         </div>
 
-        {/* COPYRIGHT DROITS RÉSERVÉS */}
-        <div className="footer-copyright">
-          <p>© 2026 OnDigital — Tous droits réservés</p>
-        </div>
+
+        {/* 🟢 BLOC STYLE IMAGE_4354FE.PNG (Tout en bas) */}
+  <div className="footer-bottom-branding">
+    <div className="footer-giant-logo-wrapper">
+      <img 
+        src="/img/logo-footer.png" 
+        alt="Logo principal" 
+        className="footer-giant-logo" 
+      />
+    </div>
+    
+    <p className="footer-copyright">
+      ©{new Date().getFullYear()} OnDigital. Tous droits réservés.
+    </p>
+  </div>
 
       </div>
     </footer>
