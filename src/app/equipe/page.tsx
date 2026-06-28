@@ -59,6 +59,17 @@ export default function EquipePage() {
       facebook: "https://www.facebook.com/carlos.todan",
       twitter: "#",
       email: "mailto:carlos@ondigital.bj"
+    },
+    {
+      name: "MOUTOUAMA Thérance",
+      role: "Monteur Vidéo",
+      badge: "GRAPHISME",
+      image: "/img/Pro-therx.png",
+      description: "Identités visuelles et supports graphiques pour des marques qui marquent.",
+      linkedin: "#",
+      facebook: "https://www.facebook.com/carlos.todan",
+      twitter: "#",
+      email: "mailto:carlos@ondigital.bj"
     }
   ];
 
