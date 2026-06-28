@@ -62,7 +62,7 @@ export default function Navbar() {
           
           <Link href="/contact" className="btn-cta mobile-cta" onClick={toggleMenu}>
             <i className="fa-regular fa-circle-check"></i> Devis gratuit
-          </Link>
+          </Link> 
         </nav>
       </div>
     </header>

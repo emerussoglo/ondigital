@@ -153,12 +153,18 @@ a {
 
 /* BOUTON MENUS MOBILE (BURGER) */
 .burger-menu {
-  display: none;
+  display: none; 
   background: none;
   border: none;
   font-size: 24px;
   color: var(--color-text-dark);
   cursor: pointer;
+  background: #f5f6f8;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 5px;
 }
 
 /* OVERLAY / MENU COMPLET MOBILE */
@@ -193,6 +199,12 @@ a {
   font-size: 24px;
   color: var(--color-text-dark);
   cursor: pointer;
+   background: #f5f6f8;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 5px;
 }
 
 .nav-mobile-links {
@@ -399,7 +411,7 @@ a {
   color: #475569; 
   letter-spacing: 0.5px;
   margin-top: -10px; 
-  text-align: center;
+  text-align: center; 
   z-index: 2;
 }
 

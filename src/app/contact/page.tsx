@@ -37,7 +37,7 @@ export default function ContactPage() {
                 </div>
                 <div className="info-text">
                   <span className="info-label">EMAIL</span>
-                  <a href="mailto:contact@ondigital.bj" className="info-value">contact@ondigital.bj</a>
+                  <a href="mailto:supportondigital@gmail.com" className="info-value">supportondigital@gmail.com</a>
                 </div>
               </div>
 
@@ -48,7 +48,7 @@ export default function ContactPage() {
                 </div>
                 <div className="info-text">
                   <span className="info-label">TÉLÉPHONE</span>
-                  <span className="info-value">+229 01 42 00 00 00</span>
+                  <span className="info-value">+229 01 00 00 00 00</span>
                 </div>
               </div>
 
