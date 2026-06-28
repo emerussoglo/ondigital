@@ -1,7 +1,32 @@
 "use client";
 
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+
+// Mini-composant réutilisable pour animer chaque nombre
+function Counter({ target, duration = 1500 }: { target: number; duration?: number }) {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    let start = 0;
+    const increment = target / (duration / 16); // ~60fps
+    
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        setCount(target);
+        clearInterval(timer);
+      } else {
+        setCount(Math.floor(start));
+      }
+    }, 16);
+
+    return () => clearInterval(timer);
+  }, [target, duration]);
+
+  return <>{count}</>;
+}
 
 export default function Hero() {
   return (
@@ -33,18 +58,18 @@ export default function Hero() {
             </Link>
           </div>
           
-          {/* STATISTIQUES */}
+         {/* STATISTIQUES AVEC COMPTEUR DYNAMIQUE */}
           <div className="hero-stats reveal-section">
             <div className="stat-item">
-              <span className="stat-number">+50</span>
+              <span className="stat-number">+<Counter target={50} /></span>
               <span className="stat-label">Projets livrés</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">+30</span>
+              <span className="stat-number">+<Counter target={30} /></span>
               <span className="stat-label">Clients satisfaits</span>
             </div>
             <div className="stat-item">
-              <span className="stat-number">5★</span>
+              <span className="stat-number"><Counter target={5} />★</span>
               <span className="stat-label">Note moyenne</span>
             </div>
           </div>
