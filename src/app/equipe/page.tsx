@@ -114,16 +114,16 @@ export default function EquipePage() {
                 <p className="member-desc">{member.description}</p>
                 
                 <div className="member-socials">
-                  <a href={member.linkedin} className="member-social-btn">
+                  <a href={member.linkedin} className="member-social-btn" target="_blank">
                     <i className="fa-brands fa-linkedin-in"></i>
                   </a>
-                  <a href={member.facebook} className="member-social-btn">
+                  <a href={member.facebook} className="member-social-btn" target="_blank">
                     <i className="fa-brands fa-facebook"></i>
                   </a>
-                  <a href={member.twitter} className="member-social-btn">
+                  <a href={member.twitter} className="member-social-btn" target="_blank">
                     <i className="fa-brands fa-x-twitter"></i>
                   </a>
-                  <a href={member.email} className="member-social-btn">
+                  <a href={member.email} className="member-social-btn" target="_blank">
                     <i className="fa-solid fa-envelope"></i>
                   </a>
                 </div>
