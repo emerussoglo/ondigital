@@ -22,10 +22,10 @@ export default function EquipePage() {
       badge: "MARKETING",
       image: "/img/thomas.jpg",
       description: "10 ans en stratégie digitale et acquisition. Pilote la performance des campagnes.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/thomas-defodji-7b7b133a5",
       facebook: "https://www.facebook.com/profile.php?id=61580999084062",
       twitter: "#",
-      email: "mailto:thomas@ondigital.bj"
+      email: "mailto:thomasdefodji793@gmail.com"
     },
     {
       name: "SOGLO Emérus",
@@ -67,7 +67,7 @@ export default function EquipePage() {
       image: "/img/Pro-therx.png",
       description: "Identités visuelles et supports graphiques pour des marques qui marquent.",
       linkedin: "#",
-      facebook: "https://www.facebook.com/carlos.todan",
+      facebook: "https://www.facebook.com/theranxe",
       twitter: "#",
       email: "mailto:carlos@ondigital.bj"
     }
