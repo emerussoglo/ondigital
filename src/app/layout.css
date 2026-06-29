@@ -1023,14 +1023,14 @@ a.info-value:hover {
 
 /* TYPOGRAPHIES ET DÉTAILS INTERNES */
 .plan-title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 800;
   color: var(--color-text-dark);
   margin-bottom: 1px;
 }
 
 .plan-desc {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-text-muted);
   line-height: 1.5;
   margin-bottom: 24px;
@@ -1047,13 +1047,14 @@ a.info-value:hover {
 }
 
 .price-amount {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 800;
+  margin-left: 5px;
   letter-spacing: -1px;
 }
 
 .price-currency {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 700;
   color: #2563eb;
   margin-left: 6px;
@@ -1061,7 +1062,7 @@ a.info-value:hover {
 }
 
 .price-period {
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: #64748b;
 }
@@ -1089,7 +1090,7 @@ a.info-value:hover {
   display: flex;
   align-items: start;
   gap: 12px;
-  font-size: 14.5px;
+  font-size: 13px;
   color: #334155;
   line-height: 1.4;
 }
@@ -1105,8 +1106,8 @@ a.info-value:hover {
   display: block;
   width: 100%;
   text-align: center;
-  padding: 10px 20px;
-  font-size: 15px;
+  padding: 8px 15px;
+  font-size: 14px;
   font-weight: 700;
   border-radius: 12px;
   text-decoration: none;

@@ -67,6 +67,7 @@ export default function ContactPage() {
 
             {/* RÉSEAUX SOCIAUX SOUCHÉS */}
             <div className="contact-socials">
+              <a href="https://www.tiktok.com/@ondigital_bj" className="contact-social-btn"><i className="fa-brands fa-tiktok"></i></a>
               <a href="#" className="contact-social-btn"><i className="fa-brands fa-linkedin-in"></i></a>
               <a href="#" className="contact-social-btn"><i className="fa-brands fa-instagram"></i></a>
               <a href="#" className="contact-social-btn"><i className="fa-brands fa-facebook-f"></i></a>

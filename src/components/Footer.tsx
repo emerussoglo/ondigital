@@ -29,6 +29,7 @@ export default function Footer() {
           <Link href="/equipe" className="footer-link">Équipe</Link>
           <Link href="/blog" className="footer-link">Blog</Link>
           <Link href="/contact" className="footer-link">Contact</Link>
+          <Link href="/devis" className="footer-link">Devis rapide</Link>
         </nav>
 
         {/* ICÔNES DES RÉSEAUX SOCIAUX */}

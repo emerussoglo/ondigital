@@ -2165,3 +2165,307 @@
     height: 320px;
   }
 }
+
+
+
+/* ==========================================================================
+   PAGE DE CONFIGURATION DE DEVIS DYNAMIQUE
+   ========================================================================== */
+.devis-page {
+  padding: 50px 0 90px 0;
+  background-color: #fafafa;
+}
+
+.devis-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.devis-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.devis-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -1px;
+}
+
+.devis-subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 8px;
+}
+
+/* LAYOUT 2 COLONNES RESPONSIVE */
+.devis-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+/* BLOCS FORMULAIRE (GAUCHE) */
+.devis-form-side {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-step-box {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+.step-label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* SÉLECTEUR DE SERVICES PRINCIPAUX */
+.service-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.service-opt-btn {
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  padding: 14px 10px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #334155;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.service-opt-btn i {
+  font-size: 16px;
+}
+
+.service-opt-btn:hover, .service-opt-btn.active {
+  border-color: #2563eb;
+  color: #2563eb;
+  background-color: #f0f5ff;
+}
+
+/* CHAMPS D'OPTIONS DÉTAILLÉES */
+.options-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.option-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #334155;
+}
+
+/* RADIO TILES ET CHECKBOXES */
+.option-radio-group {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.radio-tile {
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12.5px;
+}
+
+.opt-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 12.5px;
+  color: #475569;
+}
+
+.checkbox-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* CURSEURS (RANGES) */
+.opt-range {
+  width: 100%;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* COMPTEURS + / - */
+.counter-field {
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 12px;
+}
+
+.counter-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.count-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.count-val {
+  font-size: 13.5px;
+  font-weight: 700;
+  min-width: 16px;
+  text-align: center;
+}
+
+/* BLOC PRIX STICKY (DROITE) */
+.price-sticky-box {
+  background-color: #111215; /* Fond sombre corporate pour le récapitulatif */
+  border-radius: 16px;
+  padding: 24px;
+  color: #ffffff;
+  position: sticky;
+  top: 40px;
+}
+
+.summary-title {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #94a3b8;
+}
+
+.bold-text {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.summary-divider {
+  height: 1px;
+  background-color: #1e293b;
+  margin: 14px 0;
+}
+
+.summary-notice {
+  font-size: 11px;
+  color: #64748b;
+  line-height: 1.4;
+}
+
+.total-price-block {
+  margin-top: 24px;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 16px;
+  border-radius: 10px;
+  border-left: 3px solid #2563eb;
+}
+
+.total-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.5px;
+}
+
+.total-amount {
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+  margin-top: 4px;
+}
+
+.total-amount span {
+  font-size: 14px;
+  color: #2563eb;
+}
+
+.submit-devis-btn {
+  width: 100%;
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  padding: 14px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.submit-devis-btn:hover {
+  background-color: #1d4ed8;
+}
+
+/* ANIMATION FLUIDE CHANGEMENT */
+.animated-fade {
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 850px) {
+  .devis-layout {
+    grid-template-columns: 1fr; /* Une seule colonne verticale sur mobile/tablette */
+  }
+  
+  .service-selector-grid {
+    grid-template-columns: 1fr; /* Les types de services s'empilent */
+  }
+  
+  .price-sticky-box {
+    position: static;
+  }
+}

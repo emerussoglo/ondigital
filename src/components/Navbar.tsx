@@ -32,7 +32,7 @@ export default function Navbar() {
 
         {/* CTA DESKTOP */}
         <div className="nav-cta-desktop">
-          <Link href="/contact" className="btn-cta">
+          <Link href="/devis" className="btn-cta">
             <i className="fa-regular fa-circle-check"></i> Devis gratuit
           </Link>
         </div>
@@ -60,7 +60,7 @@ export default function Navbar() {
           <Link href="/blog" className={`nav-mobile-link ${pathname === "/blog" ? "active" : ""}`} onClick={toggleMenu}>Blog</Link>
           <Link href="/contact" className={`nav-mobile-link ${pathname === "/contact" ? "active" : ""}`} onClick={toggleMenu}>Contact</Link>
           
-          <Link href="/contact" className="btn-cta mobile-cta" onClick={toggleMenu}>
+          <Link href="/devis" className="btn-cta mobile-cta" onClick={toggleMenu}>
             <i className="fa-regular fa-circle-check"></i> Devis gratuit
           </Link> 
         </nav>

@@ -19,7 +19,7 @@ export default function PricingSection() {
   const plans: PricingPlan[] = [
     {
       title: "Marketing Digital",
-      price: "80 000",
+      price: "50 000",
       period: "/ mois",
       description: "Idéal pour booster votre visibilité locale et attirer des clients qualifiés régulièrement.",
       features: [
@@ -35,7 +35,7 @@ export default function PricingSection() {
     },
     {
       title: "Création Web",
-      price: "200 000",
+      price: "130 000",
       period: "unique",
       badge: "PLUS POPULAIRE",
       description: "Un site internet sur mesure, ultra-rapide et optimisé pour convertir vos visiteurs en clients.",
@@ -100,7 +100,7 @@ export default function PricingSection() {
                 <h3 className="plan-title">{plan.title}</h3>
                 <p className="plan-desc">{plan.description}</p>
                 <div className="plan-price-block">
-                  <span className="price-amount">{plan.price}</span>
+                à partir de   <span className="price-amount"> { plan.price}</span>
                   <span className="price-currency">FCFA</span>
                   <span className="price-period">{plan.period}</span>
                 </div>
