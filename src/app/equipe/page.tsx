@@ -20,7 +20,7 @@ export default function EquipePage() {
       name: "DEFODJI Thomas",
       role: "Marketing Digital",
       badge: "MARKETING",
-      image: "/img/thomas.jpeg",
+      image: "/img/thomas.jpg",
       description: "10 ans en stratégie digitale et acquisition. Pilote la performance des campagnes.",
       linkedin: "#",
       facebook: "https://www.facebook.com/profile.php?id=61580999084062",
