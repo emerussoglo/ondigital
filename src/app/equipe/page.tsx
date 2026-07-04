@@ -74,7 +74,7 @@ export default function EquipePage() {
   ];
 
   return (
-    <main className="team-page">
+    <main className="team-page"> 
       <div className="team-container">
         
         {/* EN-TÊTE DE LA SECTION */}
