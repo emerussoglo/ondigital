@@ -5,6 +5,7 @@ import PricingSection from '@/components/PricingSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import PosterCarouselSection from '@/components/PosterCarouselSection';
 import WebProjectsSection from '@/components/WebProjectsSection';
+import AboutSection from '@/components/AboutSection';
 import Link from 'next/link';
 
 export default function Page() {
@@ -86,6 +87,7 @@ useEffect(() => {
     <>
       {/* Section principale d'accueil */}
       <Hero />
+      <AboutSection/>
       
       {/* SECTION NOS SERVICES */}
       <section className="services-section reveal-section">

@@ -18,8 +18,8 @@ export default function EquipePage() {
   const members: Member[] = [
     {
       name: "DEFODJI Thomas",
-      role: "Marketing Digital",
-      badge: "MARKETING",
+      role: "Graphiste designer",
+      badge: "GRAPHISME",
       image: "/img/thomas.jpeg",
       description: "10 ans en stratégie digitale et acquisition. Pilote la performance des campagnes.",
       linkedin: "#",
