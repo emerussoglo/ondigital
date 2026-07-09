@@ -17,18 +17,7 @@ interface Member {
 
 export default function EquipePage() {
   const members: Member[] = [
-    {
-      name: "DEFODJI Thomas",
-      role: "Graphiste designer",
-      badge: "GRAPHISME",
-      image: "/img/thomas.jpeg",
-      description: "Expert en création visuelle et identité de marque. Maîtrise avancée de Photoshop et Canva pour des designs percutants.",
-      linkedin: "https://www.linkedin.com/in/thomas-defodji-7b7b133a5/",
-      facebook: "https://www.facebook.com/profile.php?id=61580999084062",
-      twitter: "#",
-      tiktok: "#",
-      email: "mailto:thomasdefodji793@gmail.com"
-    },
+    
     {
       name: "SOGLO Emérus",
       role: "Développeur web",
@@ -52,6 +41,18 @@ export default function EquipePage() {
       twitter: "#",
       tiktok: "https://www.tiktok.com/@yayijovis",
       email: "mailto:yayijovisleprince@gmail.com"
+    },
+    {
+      name: "DEFODJI Thomas",
+      role: "Graphiste designer",
+      badge: "GRAPHISME",
+      image: "/img/thomas.jpeg",
+      description: "Expert en création visuelle et identité de marque. Maîtrise avancée de Photoshop et Canva pour des designs percutants.",
+      linkedin: "https://www.linkedin.com/in/thomas-defodji-7b7b133a5/",
+      facebook: "https://www.facebook.com/profile.php?id=61580999084062",
+      twitter: "#",
+      tiktok: "#",
+      email: "mailto:thomasdefodji793@gmail.com"
     },
     {
       name: "TODAN Carlos",
