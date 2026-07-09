@@ -11,6 +11,7 @@ interface Member {
   linkedin: string;
   facebook: string;
   twitter: string;
+  tiktok: string,
   email: string;
 }
 
@@ -21,11 +22,12 @@ export default function EquipePage() {
       role: "Graphiste designer",
       badge: "GRAPHISME",
       image: "/img/thomas.jpeg",
-      description: "10 ans en stratégie digitale et acquisition. Pilote la performance des campagnes.",
-      linkedin: "#",
+      description: "Expert en création visuelle et identité de marque. Maîtrise avancée de Photoshop et Canva pour des designs percutants.",
+      linkedin: "https://www.linkedin.com/in/thomas-defodji-7b7b133a5/",
       facebook: "https://www.facebook.com/profile.php?id=61580999084062",
       twitter: "#",
-      email: "mailto:thomas@ondigital.bj"
+      tiktok: "#",
+      email: "mailto:thomasdefodji793@gmail.com"
     },
     {
       name: "SOGLO Emérus",
@@ -36,6 +38,7 @@ export default function EquipePage() {
       linkedin: "https://www.linkedin.com/in/em%C3%A9rus-soglo-396aba3b9/",
       facebook: "https://www.facebook.com/eme.lux.8609",
       twitter: "#",
+      tiktok: "https://www.tiktok.com/@eme_lux",
       email: "mailto:emerussoglo@gmail.com"
     },
     {
@@ -47,6 +50,7 @@ export default function EquipePage() {
       linkedin: "https://www.linkedin.com/in/jovisleprinceyayi/",
       facebook: "https://www.facebook.com/jovis.yayi.2025",
       twitter: "#",
+      tiktok: "https://www.tiktok.com/@yayijovis",
       email: "mailto:yayijovisleprince@gmail.com"
     },
     {
@@ -55,28 +59,30 @@ export default function EquipePage() {
       badge: "GRAPHISME",
       image: "/img/carlos.jpeg",
       description: "Identités visuelles et supports graphiques pour des marques qui marquent.",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/carlos-todan-aa86463b2",
       facebook: "https://www.facebook.com/carlos.todan",
       twitter: "#",
-      email: "mailto:carlos@ondigital.bj"
+      tiktok: "#",
+      email: "mailto:carlostodan@gmail.com"
     },
     {
-      name: "MOUTOUAMA Thérance",
-      role: "Monteur Vidéo",
-      badge: "GRAPHISME",
-      image: "/img/Pro-therx.png",
-      description: "Identités visuelles et supports graphiques pour des marques qui marquent.",
-      linkedin: "#",
-      facebook: "https://www.facebook.com/carlos.todan",
-      twitter: "#",
-      email: "mailto:carlos@ondigital.bj"
-    }
+  name: "MOUTOUAMA Thérance",
+  role: "Monteur Vidéo",
+  badge: "VIDÉO",
+  image: "/img/Pro-therx.png",
+  description: "Spécialiste du storytelling visuel et du montage dynamique. Transforme vos idées en vidéos percutantes (Reels, TikTok, Shorts).",
+  linkedin: "https://www.linkedin.com/in/thérance-moutouama-81707a3b2",
+  facebook: "https://www.facebook.com/theranxe",
+  twitter: "#",
+  tiktok: "",
+  email: "mailto:thérance@ondigital.bj"
+}
   ];
 
   return (
     <main className="team-page"> 
       <div className="team-container">
-        
+         
         {/* EN-TÊTE DE LA SECTION */}
         <div className="team-header">
           <div className="section-badge">NOTRE ÉQUIPE</div>
@@ -117,9 +123,9 @@ export default function EquipePage() {
                   <a href={member.linkedin} className="member-social-btn">
                     <i className="fa-brands fa-linkedin-in"></i>
                   </a>
-                  <a href={member.facebook} className="member-social-btn">
-                    <i className="fa-brands fa-facebook"></i>
-                  </a>
+                 <a href={member.tiktok} className="member-social-btn" target="_blank" rel="noopener noreferrer">
+  <i className="fa-brands fa-tiktok"></i>
+</a>
                   <a href={member.twitter} className="member-social-btn">
                     <i className="fa-brands fa-x-twitter"></i>
                   </a>
