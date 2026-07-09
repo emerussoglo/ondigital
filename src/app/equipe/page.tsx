@@ -73,9 +73,9 @@ export default function EquipePage() {
   description: "Spécialiste du storytelling visuel et du montage dynamique. Transforme vos idées en vidéos percutantes (Reels, TikTok, Shorts).",
   linkedin: "https://www.linkedin.com/in/thérance-moutouama-81707a3b2",
   facebook: "https://www.facebook.com/theranxe",
-  twitter: "#",
+  twitter: "https://www.tiktok.com/@the_ranxe",
   tiktok: "",
-  email: "mailto:thérance@ondigital.bj"
+  email: "mailto:therance@ondigital.bj"
 }
   ];
 
