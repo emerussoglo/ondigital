@@ -51,7 +51,7 @@ useEffect(() => {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-dot"></span>
-            3 CRÉNEAUX DISPONIBLES CE MOIS-CI
+           PROPULSEZ VOTRE PRÉSENCE EN LIGNE
           </div>
           
         <h1 className="hero-title">

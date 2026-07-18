@@ -56,7 +56,7 @@ export default function Footer() {
   <div className="footer-bottom-branding">
     <div className="footer-giant-logo-wrapper">
       <img 
-        src="/img/logo-footer.png" 
+        src="/img/logo-footer1.png" 
         alt="Logo principal" 
         className="footer-giant-logo" 
       />

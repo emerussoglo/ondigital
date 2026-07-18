@@ -151,6 +151,7 @@ a {
   }
 }
 
+
 /* BOUTON MENUS MOBILE (BURGER) */
 .burger-menu {
   display: none; 
@@ -159,12 +160,13 @@ a {
   font-size: 24px;
   color: var(--color-text-dark);
   cursor: pointer;
-  background: #f5f6f8;
+  /* background: #f5f6f8;  */
+  border: 2px solid #f5f6f8;
   padding-top: 4px;
   padding-bottom: 2px;
   padding-left: 8px;
   padding-right: 8px;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 /* OVERLAY / MENU COMPLET MOBILE */
@@ -179,7 +181,7 @@ a {
   display: flex;
   flex-direction: column;
   padding: 24px;
-  transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .nav-mobile-overlay.open {
@@ -193,31 +195,63 @@ a {
   margin-bottom: 40px;
 }
 
-.close-menu {
-  background: none;
-  border: none;
-  font-size: 24px;
-  color: var(--color-text-dark);
-  cursor: pointer;
-   background: #f5f6f8;
-  padding-top: 4px;
-  padding-bottom: 2px;
-  padding-left: 8px;
-  padding-right: 8px;
-  border-radius: 5px;
-}
-
 .nav-mobile-links {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.nav-mobile-link {
+
+/* LE BOUTON DE FERMETURE (XMARK) */
+.close-menu {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--color-text-dark);
+  cursor: pointer;
+  background: #f5f6f8;
+  padding-top: 4px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Effet au survol du bouton de fermeture */
+.close-menu:hover {
+  background: #e2e8f0;
+  transform: scale(1.05);
+}
+
+/* ÉTAT INITIAL DES LIENS ET DU CTA (Masqués et décalés à gauche) */
+.nav-mobile-link,
+.mobile-cta {
   font-size: 18px;
   font-weight: 500;
   color: var(--color-text-dark);
   padding-bottom: 8px;
+  
+  opacity: 0;
+  transform: translateX(-30px); /* Poussé vers la gauche */
+  will-change: transform, opacity;
+  /* Transition fluide pour le retour en arrière à la fermeture */
+  transition: transform 0.3s ease, opacity 0.3s ease; 
+}
+
+/* DÉCLENCHEMENT DE L'ANIMATION EN CASCADE À L'OUVERTURE */
+.nav-mobile-overlay.open .nav-mobile-link,
+.nav-mobile-overlay.open .mobile-cta {
+  opacity: 1;
+  transform: translateX(0); /* Revient à sa position normale */
+  
+  /* Transition cubic-bezier haut de gamme pour l'effet de glisse rapide */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  /* Calcul dynamique du retard (45ms d'écart par élément pour aller très vite) */
+  transition-delay: calc(var(--i) * 45ms); 
 }
 
 .nav-mobile-link:active {
@@ -230,6 +264,9 @@ a {
   width: 100%;
   padding: 14px;
   font-size: 16px;
+  display: flex; /* Assure un alignement propre de l'icône */
+  align-items: center;
+  gap: 8px;
 }
 
 /* RESPONSIVE MEDIA QUERIES */

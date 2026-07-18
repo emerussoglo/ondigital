@@ -2,15 +2,25 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // <--- AJOUT ICI
+import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // <--- RÉCUPÈRE L'URL ACTUELLE (ex: "/" ou "/services")
+  const pathname = usePathname();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  // Tableau pour générer les liens dynamiquement et appliquer l'index d'animation facilement
+  const menuLinks = [
+    { href: "/", label: "Accueil" },
+    { href: "/services", label: "Services" },
+    { href: "/realisations", label: "Réalisations" },
+    { href: "/equipe", label: "Équipe" },
+    { href: "/blog", label: "Blog" },
+    { href: "/contact", label: "Contact" },
+  ];
 
   return (
     <header className="navbar-header">
@@ -22,12 +32,15 @@ export default function Navbar() {
 
         {/* MENU DESKTOP */}
         <nav className="nav-desktop">
-          <Link href="/" className={`nav-link ${pathname === "/" ? "active" : ""}`}>Accueil</Link>
-          <Link href="/services" className={`nav-link ${pathname === "/services" ? "active" : ""}`}>Services</Link>
-          <Link href="/realisations" className={`nav-link ${pathname === "/realisations" ? "active" : ""}`}>Réalisations</Link>
-          <Link href="/equipe" className={`nav-link ${pathname === "/equipe" ? "active" : ""}`}>Équipe</Link>
-          <Link href="/blog" className={`nav-link ${pathname === "/blog" ? "active" : ""}`}>Blog</Link>
-          <Link href="/contact" className={`nav-link ${pathname === "/contact" ? "active" : ""}`}>Contact</Link>
+          {menuLinks.map((link) => (
+            <Link 
+              key={link.href} 
+              href={link.href} 
+              className={`nav-link ${pathname === link.href ? "active" : ""}`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         {/* CTA DESKTOP */}
@@ -53,14 +66,24 @@ export default function Navbar() {
         </div>
 
         <nav className="nav-mobile-links">
-          <Link href="/" className={`nav-mobile-link ${pathname === "/" ? "active" : ""}`} onClick={toggleMenu}>Accueil</Link>
-          <Link href="/services" className={`nav-mobile-link ${pathname === "/services" ? "active" : ""}`} onClick={toggleMenu}>Services</Link>
-          <Link href="/realisations" className={`nav-mobile-link ${pathname === "/realisations" ? "active" : ""}`} onClick={toggleMenu}>Réalisations</Link>
-          <Link href="/equipe" className={`nav-mobile-link ${pathname === "/equipe" ? "active" : ""}`} onClick={toggleMenu}>Équipe</Link>
-          <Link href="/blog" className={`nav-mobile-link ${pathname === "/blog" ? "active" : ""}`} onClick={toggleMenu}>Blog</Link>
-          <Link href="/contact" className={`nav-mobile-link ${pathname === "/contact" ? "active" : ""}`} onClick={toggleMenu}>Contact</Link>
+          {menuLinks.map((link, index) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className={`nav-mobile-link ${pathname === link.href ? "active" : ""}`}
+              onClick={toggleMenu}
+              style={{ "--i": index } as React.CSSProperties} /* index pour le décalage */
+            >
+              {link.label}
+            </Link>
+          ))}
           
-          <Link href="/devis" className="btn-cta mobile-cta" onClick={toggleMenu}>
+          <Link 
+            href="/devis" 
+            className="btn-cta mobile-cta" 
+            onClick={toggleMenu}
+            style={{ "--i": menuLinks.length } as React.CSSProperties} /* Le CTA arrive en dernier */
+          >
             <i className="fa-regular fa-circle-check"></i> Devis gratuit
           </Link> 
         </nav>
