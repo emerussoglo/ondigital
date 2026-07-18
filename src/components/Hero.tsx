@@ -29,6 +29,20 @@ function Counter({ target, duration = 1500 }: { target: number; duration?: numbe
 }
 
 export default function Hero() {
+
+
+  const [isFlipped, setIsFlipped] = useState(false);
+
+useEffect(() => {
+  // Attente stricte de 3 secondes (3000ms) avant de déclencher l'animation
+  const timer = setTimeout(() => {
+    setIsFlipped(true);
+  }, 3000);
+
+  return () => clearTimeout(timer);
+}, []);
+
+
   return (
     <section className="hero-section">
       <div className="hero-container">
@@ -40,10 +54,15 @@ export default function Hero() {
             3 CRÉNEAUX DISPONIBLES CE MOIS-CI
           </div>
           
-          <h1 className="hero-title">
-            La visibilité devient <br />
-            <span className="text-gradient">simplicité.</span>
-          </h1>
+        <h1 className="hero-title">
+    La visibilité devient <br />
+    <span className="word-rotator-container">
+      <span className={`word-rotator-track ${isFlipped ? "is-flipped" : ""}`}>
+        <span className="text-gradient word-node">facilité.</span>
+        <span className="text-gradient word-node">simplicité.</span>
+      </span>
+    </span>
+  </h1>
           
          <p className="hero-description">
   <strong>OnDigital</strong> — agence basée à <strong>Cotonou, Bénin</strong>, spécialisée en <strong>marketing digital</strong>, <strong>création de sites web</strong>, <strong>design graphique</strong> et <strong>création de vidéo</strong>.
@@ -54,7 +73,7 @@ export default function Hero() {
               Planifier un appel <i className="fa-regular fa-calendar-check"></i>
             </Link>
             <Link href="/services" className="btn-hero-secondary">
-              Découvrir nos services <i className="fa-solid fa-compass"></i>
+              Découvrir nos services <i className="fa-solid fa-compass"></i> 
             </Link>
           </div>
           

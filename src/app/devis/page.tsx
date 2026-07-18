@@ -79,7 +79,7 @@ export default function DevisPage() {
               <div className="service-selector-grid">
                 <button 
                   className={`service-opt-btn ${service === 'web' ? 'active' : ''}`}
-                  onClick={() => setService('web')}
+                  onClick={() => setService('web')} 
                 >
                   <i className="fa-solid fa-globe"></i> Sites Web
                 </button>

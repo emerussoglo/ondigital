@@ -5,51 +5,38 @@ import React, { useRef } from 'react';
 interface PosterProject {
   id: number;
   title: string;
-  categoryLabel: string;
   image: string;
-  description: string;
 }
 
 export default function PosterCarouselSection() {
   const carouselRef = useRef<HTMLDivElement>(null);
 
   const posters: PosterProject[] = [
-    {
-      id: 6,
-      title: "Affiche Publicitaire - LM-Nails",
-      categoryLabel: "GRAPHISME / PRINT",
-      image: "/img/affiche-lm-nails.jpeg",
-      description: "Valorisation des services (Nail Art, Extensions) et intégration des réseaux sociaux pour maximiser la visibilité locale."
-    },
-    {
-      id: 7,
-      title: "Visuel Promotionnel - Formation IA",
-      categoryLabel: "GRAPHISME / MARKETING",
-      image: "/img/affiche-formation-ia.jpeg",
-      description: "Conception d'une affiche de conversion combinant l'imagerie Tech/IA avec des accroches claires."
-    },
-    {
-      id: 8,
-      title: "Affiche Catalogue - Nice's Collection",
-      categoryLabel: "GRAPHISME / BRANDING",
-      image: "/img/affiche-nices-collection.jpeg",
-      description: "Design de support sous forme de mini-catalogue avec des bulles de produits pour une lecture fluide."
-    },
-    {
-      id: 9,
-      title: "Logo & Charte - Crown Studio",
-      categoryLabel: "IDENTITÉ VISUELLE",
-      image: "/img/affiche.jpeg",
-      description: "Création complète d'un univers de marque moderne et épuré adaptable sur tous supports."
-    }
+    { id: 13, title: "Affiche Publicitaire", image: "/img/affiche-9.jpeg" }, 
+    { id: 11, title: "Affiche Publicitaire", image: "/img/affiche-6.jpeg" }, 
+    { id: 4, title: "Affiche Publicitaire", image: "/img/affiche-3.jpeg" }, 
+    { id: 1, title: "Affiche Publicitaire", image: "/img/affiche-1.jpeg" }, 
+    { id: 5, title: "Affiche Publicitaire", image: "/img/affiche-4.jpeg" }, 
+    { id: 14, title: "Affiche Publicitaire", image: "/img/affiche-10.jpeg" }, 
+    { id: 6, title: "Affiche Publicitaire - LM-Nails", image: "/img/affiche-lm-nails.jpeg" }, 
+    { id: 7, title: "Birthday", image: "/img/affiche-15.jpeg" },
+    { id: 2, title: "Affiche Publicitaire", image: "/img/affiche-2.jpeg" }, 
+    { id: 8, title: "Affiche Catalogue - Nice's Collection", image: "/img/affiche-nices-collection.jpeg" },
+    { id: 9, title: "Logo & Charte - Crown Studio", image: "/img/affiche.jpeg" },
+    { id: 10, title: "Affiche Publicitaire", image: "/img/affiche-5.jpeg" }, 
+    { id: 12, title: "Affiche Publicitaire", image: "/img/affiche-7.jpeg" }, 
+    { id: 19, title: "Affiche Publicitaire", image: "/img/affiche-1.jpeg" }, 
+    { id: 3, title: "Affiche Publicitaire", image: "/img/affiche-8.jpeg" }, 
+    { id: 15, title: "Affiche Publicitaire", image: "/img/affiche-11.jpeg" }, 
+    { id: 16, title: "Affiche Publicitaire", image: "/img/affiche-12.jpeg" }, 
+    { id: 17, title: "Affiche Publicitaire", image: "/img/affiche-13.jpeg" }, 
+    { id: 18, title: "Affiche Publicitaire", image: "/img/affiche-14.jpeg" }, 
   ];
 
-  // Fonction pour faire défiler le carrousel avec les boutons
   const scroll = (direction: 'left' | 'right') => {
     if (carouselRef.current) {
-      const { scrollLeft, clientWidth } = carouselRef.current;
-      // On se déplace de la largeur d'une carte (environ 340px)
-      const scrollAmount = direction === 'left' ? -340 : 340;
+      const { scrollLeft } = carouselRef.current;
+      const scrollAmount = direction === 'left' ? -330 : 330; // Correspond à la largeur de la carte + gap
       carouselRef.current.scrollTo({
         left: scrollLeft + scrollAmount,
         behavior: 'smooth'
@@ -61,7 +48,7 @@ export default function PosterCarouselSection() {
     <section className="posters-section reveal-section">
       <div className="posters-container">
         
-        {/* EN-TÊTE DE LA SECTION AVEC LES FLÈCHES DE NAVIGATION */}
+        {/* EN-TÊTE DE LA SECTION ÉPURÉE */}
         <div className="posters-header">
           <div className="header-text-side">
             <div className="section-badge">GRAPHISME</div>
@@ -69,38 +56,27 @@ export default function PosterCarouselSection() {
               Nos affiches & <span className="text-italic-blue">visuels.</span>
             </h2>
           </div>
-          
-          
-          {/* Les flèches de direction */}
-          <div className="carousel-actions-nav">
-            <button className="nav-arrow-btn" onClick={() => scroll('left')} aria-label="Précédent">
-              <i className="fa-solid fa-chevron-left"></i>
-            </button>
-            <button className="nav-arrow-btn" onClick={() => scroll('right')} aria-label="Suivant">
-              <i className="fa-solid fa-chevron-right"></i>
-            </button>
-          </div>
         </div>
 
-        {/* CONTENEUR DU CAROUSEL DEFILANT */}
+        {/* CONTENEUR DU CAROUSEL (IMAGE SEULE + DRAG & SWIPE NATIF) */}
         <div className="posters-carousel-wrapper" ref={carouselRef}>
           {posters.map((poster) => (
             <div className="poster-card" key={poster.id}>
-              
-              {/* Image ajustée pour les affiches verticales (contain pour ne rien couper) */}
               <div className="poster-image-box">
-                <img src={poster.image} alt={poster.title} className="poster-img" />
+                <img src={poster.image} alt={poster.title} className="poster-img" draggable="false" />
               </div>
-              
-              {/* Contenu textuel discret */}
-              <div className="poster-info">
-                <span className="poster-cat-badge">{poster.categoryLabel}</span>
-                <h3 className="poster-card-title">{poster.title}</h3>
-                <p className="poster-card-desc">{poster.description}</p>
-              </div>
- 
             </div>
           ))}
+        </div>
+
+        {/* FLÈCHES DE DIRECTION SYSTÉMATIQUEMENT EN BAS ET CENTRÉES */}
+        <div className="carousel-bottom-nav">
+          <button className="nav-arrow-btn" onClick={() => scroll('left')} aria-label="Précédent">
+            <i className="fa-solid fa-chevron-left"></i>
+          </button>
+          <button className="nav-arrow-btn" onClick={() => scroll('right')} aria-label="Suivant">
+            <i className="fa-solid fa-chevron-right"></i>
+          </button>
         </div>
 
       </div>

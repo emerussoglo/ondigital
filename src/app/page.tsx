@@ -102,7 +102,7 @@ useEffect(() => {
             <p className="services-subtitle">
               Tout ce dont votre activité a besoin pour rayonner en ligne.
             </p>
-          </div>
+          </div> 
 
           {/* GRILLE DES TROIS CARTES */}
           <div className="services-grid reveal-section">
