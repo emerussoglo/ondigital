@@ -47,6 +47,7 @@
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
+  text-transform: initial;
   margin-bottom: 24px;
 }
 
@@ -307,13 +308,18 @@
     text-align: center;
     padding-top: 0px;
   }
+  .hero-container .hero-description{
+    margin-top: -6px;
+  }
   
   .hero-content {
     max-width: 100%;
-    margin-bottom: 20px; /* Crée de l'espace avant la grille d'images */
+    margin-bottom: 15px; /* Crée de l'espace avant la grille d'images */
   }
 
   .hero-title {
+    line-height: 1;
+    margin-top: -10px;
     font-size: 42px;
   }
 
@@ -323,7 +329,7 @@
 
   .hero-stats {
     justify-content: center;
-    gap: 28px;
+    gap: 26px;
   }
 
   .hero-visual-grid {
@@ -340,7 +346,7 @@
 
 @media (max-width: 640px) {
   .hero-section {
-    padding: 20px 0;
+    padding: 15px 0;
   }
 
   .hero-title {

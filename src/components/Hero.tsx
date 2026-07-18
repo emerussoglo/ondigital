@@ -51,7 +51,7 @@ useEffect(() => {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-dot"></span>
-           PROPULSEZ VOTRE PRÉSENCE EN LIGNE
+           Propulsez votre présence en ligne
           </div>
           
         <h1 className="hero-title">
@@ -62,7 +62,7 @@ useEffect(() => {
         <span className="text-gradient word-node">simplicité.</span>
       </span>
     </span>
-  </h1>
+  </h1> 
           
          <p className="hero-description">
   <strong>OnDigital</strong> — agence basée à <strong>Cotonou, Bénin</strong>, spécialisée en <strong>marketing digital</strong>, <strong>création de sites web</strong>, <strong>design graphique</strong> et <strong>création de vidéo</strong>.

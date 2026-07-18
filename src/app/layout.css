@@ -236,7 +236,7 @@ a {
   padding-bottom: 8px;
   
   opacity: 0;
-  transform: translateX(-30px); /* Poussé vers la gauche */
+  transform: translateX(-40px); /* Poussé vers la gauche */
   will-change: transform, opacity;
   /* Transition fluide pour le retour en arrière à la fermeture */
   transition: transform 0.3s ease, opacity 0.3s ease; 
